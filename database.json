@@ -1,0 +1,13 @@
+{
+  "customers": [
+    {
+      "username": "Ali",
+      "password": "password",
+      "wallet": 1000000
+    }
+  ],
+  "items": [],
+  "deletedItems": [],
+  "orders": [],
+  "orderHistory": []
+}
