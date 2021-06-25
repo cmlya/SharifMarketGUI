@@ -1,4 +1,4 @@
-package view.customer.entry;
+package view;
 
 import javafx.fxml.FXML;
 

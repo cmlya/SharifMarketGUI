@@ -1,4 +1,4 @@
-package view.customer.entry.signup;
+package view;
 
 import controller.Customer;
 import javafx.fxml.FXML;
