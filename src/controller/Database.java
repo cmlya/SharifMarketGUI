@@ -19,7 +19,7 @@ public class Database {
     static Database database;
 
     public static Database getInstance() {
-        if(database == null) { read(); }
+        if(database == null) read();
         return database;
     }
 
@@ -55,7 +55,10 @@ public class Database {
     public void setSellingPrice(Item item, int newSellingPrice) { item.setSellingPrice(newSellingPrice); }
     public void setBuyingPrice(Item item, int newBuyingPrice) { item.setBuyingPrice(newBuyingPrice); }
     public Customer getCurrentCustomer() { return currentCustomer; }
-    public void setCurrentCustomer(Customer currentCustomer) { this.currentCustomer = currentCustomer; }
+    public void setCurrentCustomer(Customer currentCustomer) {
+        this.currentCustomer = currentCustomer;
+        write();
+    }
     public ArrayList<Item> getItems() { return items; }
     public ArrayList<Item> getDeletedItems() { return deletedItems; }
     public ArrayList<Order> getOrders() { return orders; }

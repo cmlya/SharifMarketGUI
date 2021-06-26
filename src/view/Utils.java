@@ -1,5 +1,6 @@
 package view;
 
+import controller.Database;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,5 +14,10 @@ public class Utils {
             Stage stage = UserView.window;
             stage.setScene(new Scene(signup, UserView.STAGE_WIDTH, UserView.STAGE_HEIGHT));
             stage.show();
+    }
+
+    public static void exit() {
+        Database.getInstance().setCurrentCustomer(null);
+        System.exit(1400);
     }
 }

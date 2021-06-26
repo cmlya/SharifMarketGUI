@@ -1,18 +1,8 @@
 {
   "customers": [
     {
-      "username": "Ali",
+      "username": "ali",
       "password": "password",
-      "wallet": 1000000
-    },
-    {
-      "username": "awwww",
-      "password": "eee",
-      "wallet": 1000000
-    },
-    {
-      "username": "ee",
-      "password": "ee99",
       "wallet": 1000000
     }
   ],

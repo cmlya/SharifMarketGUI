@@ -9,8 +9,5 @@ import static view.Utils.setScene;
 public class LoginSignupMenu {
     @FXML private void signup() throws IOException { setScene("Signup.fxml"); }
     @FXML private void login() throws IOException { setScene("Login.fxml"); }
-
-    @FXML private void exit() {
-        System.out.println("EXIT CLICKED");
-    } // TODO
+    @FXML private void exit() { Utils.exit(); }
 }
