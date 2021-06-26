@@ -11,7 +11,7 @@
             <Font size="50.0" />
          </font>
       </Button>
-      <Button layoutX="436.0" layoutY="242.0" mnemonicParsing="false" onAction="#login" text="LOGIN">
+      <Button layoutX="436.0" layoutY="242.0" mnemonicParsing="false" onAction="#login" text="SIGN IN">
          <font>
             <Font size="50.0" />
          </font>

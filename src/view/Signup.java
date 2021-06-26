@@ -40,20 +40,19 @@ public class Signup {
 
     @FXML
     private void passwordMatch() {
-        System.out.println(newPassword.getText());
-        System.out.println(testString.getText());
         passwordsDoNotMatch.setVisible(!testString.getText().equals(newPassword.getText()));
         signUpButton.setDisable(!testString.getText().equals(newPassword.getText()) ||
                 newPassword.getText().length() < 3);
     }
 
     @FXML
-    private void addCustomer() {
+    private void addCustomer() throws IOException {
         String username = newUsername.getText().trim().toLowerCase(Locale.ROOT);
         String password = newPassword.getText();
         Customer customer = new Customer(username, password);
         Alert.display("Success!", "Account created successfully.");
         Database.getInstance().setCurrentCustomer(customer);
+        setScene("MainMenu.fxml");
     }
 
     @FXML private void back() throws IOException { setScene("LoginSignupMenu.fxml"); }
