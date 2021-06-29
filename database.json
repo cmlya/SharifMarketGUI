@@ -2,7 +2,7 @@
   "customers": [
     {
       "username": "user",
-      "password": "password",
+      "password": "pass",
       "wallet": 1000000
     }
   ],
