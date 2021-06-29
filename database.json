@@ -1,12 +1,24 @@
 {
   "customers": [
     {
-      "username": "ali",
+      "username": "user",
       "password": "password",
       "wallet": 1000000
     }
   ],
-  "items": [],
+  "items": [
+    {
+      "name": "Product",
+      "inStock": 30,
+      "buyingPrice": 7000,
+      "sellingPrice": 10000,
+      "ID": 458679,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    }
+  ],
   "deletedItems": [],
   "orders": [],
   "orderHistory": []

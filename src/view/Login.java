@@ -5,11 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Objects;
-
 import static controller.Database.getInstance;
 import static view.Utils.setScene;
 
