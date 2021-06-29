@@ -10,9 +10,7 @@ import java.util.Objects;
 
 public class UserView extends Application {
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    public static void main(String[] args) { launch(args); }
 
     public static Stage window = new Stage();
     public static final int STAGE_WIDTH = 800;

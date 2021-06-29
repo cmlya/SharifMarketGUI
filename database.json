@@ -17,6 +17,17 @@
       "numberSold": 0,
       "moneyMadeFrom": 0,
       "itemProfit": 0
+    },
+    {
+      "name": "Rice",
+      "inStock": 0,
+      "buyingPrice": 13000,
+      "sellingPrice": 20000,
+      "ID": 458638,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
     }
   ],
   "deletedItems": [],

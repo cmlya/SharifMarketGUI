@@ -12,9 +12,9 @@
    <children>
       <Pane fx:id="pane" layoutX="42.0" layoutY="110.0" prefHeight="450.0" prefWidth="734.0">
          <children>
-            <VBox fx:id="vBox" layoutX="15.0" layoutY="23.0" prefHeight="406.0" prefWidth="695.0">
+            <VBox fx:id="vBox" layoutX="20.0" layoutY="44.0" prefHeight="406.0" prefWidth="695.0">
                <children>
-                  <TableView fx:id="itemTableView" prefHeight="296.0" prefWidth="327.0">
+                  <TableView fx:id="itemTableView" prefHeight="296.0" prefWidth="327.0" visible="false">
                     <columns>
                       <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Item Name" />
                       <TableColumn fx:id="codeColumn" prefWidth="75.0" text="Item Code" />
@@ -24,6 +24,11 @@
                   </TableView>
                </children>
             </VBox>
+            <Button layoutX="377.0" layoutY="-21.0" mnemonicParsing="false" onAction="#showOutOfStock" text="Items Out of Stock">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children></Pane>
       <Button layoutX="722.0" layoutY="45.0" mnemonicParsing="false" onAction="#exit" text="EXIT">
          <font>
@@ -35,6 +40,10 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="374.0" layoutY="64.0" mnemonicParsing="false" onAction="#showItems" text="DISPLAY" />
+      <Button layoutX="221.0" layoutY="89.0" mnemonicParsing="false" onAction="#showInStock" text="Items In Stock">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

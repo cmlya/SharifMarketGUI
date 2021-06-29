@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+
 import java.io.IOException;
 import static view.Utils.setScene;
 
@@ -21,7 +22,16 @@ public class ShowItems {
     @FXML TableColumn<Item, Integer> sellingPriceColumn = new TableColumn<>("Price");
     @FXML TableColumn<Item, Integer> inStockColumn = new TableColumn<>("In Stock");
     @FXML VBox vBox = new VBox();
+    Boolean showAvailable = true;
 
+    @FXML private void showInStock() {
+        showAvailable = true;
+        showItems();
+    }
+    @FXML private void showOutOfStock() {
+        showAvailable = false;
+        showItems();
+    }
 
     public void showItems() {
         nameColumn.setMinWidth(100);
@@ -33,11 +43,19 @@ public class ShowItems {
         inStockColumn.setMinWidth(50);
         inStockColumn.setCellValueFactory(new PropertyValueFactory<>("inStock"));
         itemTableView.setItems(getItems());
+        itemTableView.setVisible(true);
     }
 
     public ObservableList<Item> getItems() {
         ObservableList<Item> items = FXCollections.observableArrayList();
-        items.addAll(Database.getInstance().getItems());
+        if (showAvailable) {
+            for (Item item : Database.getInstance().getItems())
+                if (item.getInStock() != 0)
+                    items.add(item);
+        }
+        else for (Item item : Database.getInstance().getItems())
+            if (item.getInStock() == 0)
+                items.add(item);
         return items;
     }
 
