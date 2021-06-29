@@ -50,7 +50,7 @@
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <PasswordField fx:id="testString" layoutX="358.0" layoutY="270.0" onKeyTyped="#passwordMatch" promptText="Choose a password">
+            <PasswordField fx:id="testString" layoutX="358.0" layoutY="270.0" onKeyTyped="#passwordMatch" promptText="Confirm password">
                <font>
                   <Font size="17.0" />
                </font>
