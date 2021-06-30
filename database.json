@@ -28,6 +28,138 @@
       "numberSold": 0,
       "moneyMadeFrom": 0,
       "itemProfit": 0
+    },
+    {
+      "name": "Egg",
+      "inStock": 20,
+      "buyingPrice": 1000,
+      "sellingPrice": 2000,
+      "ID": 754021,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Water",
+      "inStock": 34,
+      "buyingPrice": 700,
+      "sellingPrice": 3000,
+      "ID": 780093,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Sugar",
+      "inStock": 0,
+      "buyingPrice": 400,
+      "sellingPrice": 900,
+      "ID": 978740,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Salt",
+      "inStock": 0,
+      "buyingPrice": 300,
+      "sellingPrice": 800,
+      "ID": 902873,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Pizza",
+      "inStock": 13,
+      "buyingPrice": 20000,
+      "sellingPrice": 56000,
+      "ID": 994867,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Toffee",
+      "inStock": 0,
+      "buyingPrice": 900,
+      "sellingPrice": 2000,
+      "ID": 597656,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Banana",
+      "inStock": 16,
+      "buyingPrice": 1000,
+      "sellingPrice": 3000,
+      "ID": 514340,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Potato",
+      "inStock": 45,
+      "buyingPrice": 100,
+      "sellingPrice": 1000,
+      "ID": 174350,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Chocolate",
+      "inStock": 30,
+      "buyingPrice": 4000,
+      "sellingPrice": 10000,
+      "ID": 522880,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Milk",
+      "inStock": 14,
+      "buyingPrice": 3000,
+      "sellingPrice": 4000,
+      "ID": 478044,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Roast Beef",
+      "inStock": 12,
+      "buyingPrice": 40000,
+      "sellingPrice": 80000,
+      "ID": 945074,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "CocaCola",
+      "inStock": 40,
+      "buyingPrice": 100,
+      "sellingPrice": 1500,
+      "ID": 334461,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
     }
   ],
   "deletedItems": [],

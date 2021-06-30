@@ -1,6 +1,10 @@
 package controller;
 
 import model.ConsoleColors;
+
+import java.util.Locale;
+
+import static controller.Database.write;
 import static controller.Utils.digitCount;
 import static controller.Utils.spaces;
 
@@ -10,28 +14,24 @@ public class Item {
     private int buyingPrice;
     private int sellingPrice;
     private final int ID;
-    private int ordersIn;
-    private int numberSold;
-    private int moneyMadeFrom;
-    private int itemProfit;
+    private int ordersIn = 0;
+    private int numberSold = 0;
+    private int moneyMadeFrom = 0;
+    private int itemProfit = 0;
 
-    public Item(String name, int ID, int buyingPrice, int sellingPrice, int inStock,
-                int ordersIn, int numberSold, int moneyMadeFrom, int itemProfit) {
+    public Item(String name, int ID, int buyingPrice, int sellingPrice, int inStock) {
         this.name = name;
         this.ID = ID;
         this.buyingPrice = buyingPrice;
         this.sellingPrice = sellingPrice;
         this.inStock = inStock;
-        this.ordersIn = ordersIn;
-        this.numberSold = numberSold;
-        this.moneyMadeFrom = moneyMadeFrom;
-        this.itemProfit = itemProfit;
         Database.getInstance().addItem(this);
+        write();
     }
 
     public static Item findItemByName(String name) {
         for (Item item : Database.getInstance().getItems())
-            if (item.name.equals(name))
+            if (item.name.toLowerCase(Locale.ROOT).equals(name.toLowerCase(Locale.ROOT)))
                 return item;
         return null;
     }

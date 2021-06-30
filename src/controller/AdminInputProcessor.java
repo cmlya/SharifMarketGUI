@@ -47,7 +47,7 @@ public class AdminInputProcessor {
                 return;
             }
             int ID = randomCode();
-            new Item(name, ID, buyingPrice, sellingPrice, inStock, 0, 0, 0, 0);
+            new Item(name, ID, buyingPrice, sellingPrice, inStock);
             System.out.println("Item added successfully. Item ID: " + ID);
         }
     }
