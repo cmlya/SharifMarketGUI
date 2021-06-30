@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import sample.Alert;
 import java.io.IOException;
 import java.util.Locale;
-import static view.Utils.setScene;
+import static view.UserUtils.setScene;
 
 public class Signup {
     @FXML TextField newUsername;
@@ -56,5 +56,5 @@ public class Signup {
     }
 
     @FXML private void back() throws IOException { setScene("LoginSignupMenu.fxml"); }
-    @FXML private void exit() { Utils.exit(); }
+    @FXML private void exit() { UserUtils.exit(); }
 }

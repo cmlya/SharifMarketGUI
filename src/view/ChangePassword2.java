@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import java.io.IOException;
-import static view.Utils.setScene;
+import static view.UserUtils.setScene;
 
 public class ChangePassword2 {
     @FXML PasswordField testString = new PasswordField();
@@ -47,5 +47,5 @@ public class ChangePassword2 {
         new Thread(sleeper).start();
     }
     @FXML private void mainMenu () throws IOException { setScene("MainMenu.fxml"); }
-    @FXML private void exit() { Utils.exit(); }
+    @FXML private void exit() { UserUtils.exit(); }
 }

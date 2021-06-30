@@ -3,7 +3,7 @@ package view;
 import controller.Database;
 import javafx.fxml.FXML;
 import java.io.IOException;
-import static view.Utils.setScene;
+import static view.UserUtils.setScene;
 
 public class MainMenu {
     @FXML private void showItems() throws IOException { setScene("ShowItems.fxml"); }
@@ -12,5 +12,5 @@ public class MainMenu {
         setScene("LoginSignupMenu.fxml");
         Database.getInstance().setCurrentCustomer(null);
     }
-    @FXML private void exit() { Utils.exit(); }
+    @FXML private void exit() { UserUtils.exit(); }
 }

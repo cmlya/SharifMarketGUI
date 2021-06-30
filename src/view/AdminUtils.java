@@ -8,11 +8,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class Utils {
+public class AdminUtils {
     public static void setScene(String FILENAME) throws IOException {
-            Parent signup = FXMLLoader.load(Objects.requireNonNull(Utils.class.getResource(FILENAME)));
-            Stage stage = UserView.window;
-            stage.setScene(new Scene(signup, UserView.STAGE_WIDTH, UserView.STAGE_HEIGHT));
+            Parent parent = FXMLLoader.load(Objects.requireNonNull(AdminUtils.class.getResource(FILENAME)));
+            Stage stage = AdminView.window;
+            stage.setScene(new Scene(parent, AdminView.STAGE_WIDTH, AdminView.STAGE_HEIGHT));
             stage.show();
     }
 

@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.Objects;
 import static controller.Database.getInstance;
-import static view.Utils.setScene;
+import static view.UserUtils.setScene;
 
 public class Login {
     @FXML TextField usernameInput;
@@ -44,5 +44,5 @@ public class Login {
     }
 
     @FXML private void back() throws IOException { setScene("LoginSignupMenu.fxml"); }
-    @FXML private void exit() { Utils.exit(); }
+    @FXML private void exit() { UserUtils.exit(); }
 }

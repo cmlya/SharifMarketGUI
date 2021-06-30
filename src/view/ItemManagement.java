@@ -1,35 +1,34 @@
-package view;
+package view; // ADMIN
 
 import controller.Database;
 import controller.Item;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-
 import java.io.IOException;
-import static view.UserUtils.setScene;
+import static view.AdminUtils.setScene;
 
-public class ShowItems {
-    @FXML Pane pane = new Pane();
+public class ItemManagement {
+    @FXML RadioButton availableItems = new RadioButton();
+    @FXML RadioButton unavailableItems = new RadioButton();
+    @FXML VBox vBox = new VBox();
     @FXML TableView<Item> itemTableView = new TableView<>();
     @FXML TableColumn<Item, String> nameColumn = new TableColumn<>("Item Name");
     @FXML TableColumn<Item, Integer> codeColumn = new TableColumn<>("Item Code");
-    @FXML TableColumn<Item, Integer> sellingPriceColumn = new TableColumn<>("Price");
+    @FXML TableColumn<Item, Integer> sellingPriceColumn = new TableColumn<>("Selling Price");
+    @FXML TableColumn<Item, Integer> buyingPriceColumn = new TableColumn<>("Buying Price");
     @FXML TableColumn<Item, Integer> inStockColumn = new TableColumn<>("In Stock");
-    @FXML VBox vBox = new VBox();
-    Boolean showAvailable = true;
+    Boolean showAvailable = false;
+    Boolean showUnavailable = false;
 
-    @FXML private void showInStock() {
-        showAvailable = true;
-        showItems();
-    }
-    @FXML private void showOutOfStock() {
-        showAvailable = false;
+    public void setDisplay() {
+        showAvailable = availableItems.isSelected();
+        showUnavailable = unavailableItems.isSelected();
         showItems();
     }
 
@@ -38,8 +37,10 @@ public class ShowItems {
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         codeColumn.setMinWidth(100);
         codeColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
-        sellingPriceColumn.setMinWidth(100);
+        sellingPriceColumn.setMinWidth(150);
         sellingPriceColumn.setCellValueFactory(new PropertyValueFactory<>("sellingPrice"));
+        buyingPriceColumn.setMinWidth(150);
+        buyingPriceColumn.setCellValueFactory(new PropertyValueFactory<>("buyingPrice"));
         inStockColumn.setMinWidth(50);
         inStockColumn.setCellValueFactory(new PropertyValueFactory<>("inStock"));
         itemTableView.setItems(getItems());
@@ -53,12 +54,14 @@ public class ShowItems {
                 if (item.getInStock() != 0)
                     items.add(item);
         }
-        else for (Item item : Database.getInstance().getItems())
+        if (showUnavailable) for (Item item : Database.getInstance().getItems())
             if (item.getInStock() == 0)
                 items.add(item);
         return items;
     }
 
-    @FXML private void mainMenu () throws IOException { setScene("MainMenu.fxml"); }
-    @FXML private void exit() { UserUtils.exit(); }
+
+    @FXML private void exit() { AdminUtils.exit(); }
+    @FXML private void mainMenu () throws IOException { setScene("AdminMainMenu.fxml"); }
+
 }

@@ -8,50 +8,53 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Login">
-   <children>
-      <Pane layoutX="333.0" layoutY="81.0" />
-      <Label layoutX="360.0" layoutY="120.0" text="SIGN IN">
-         <font>
-            <Font size="38.0" />
-         </font>
-      </Label>
-      <Label layoutX="127.0" layoutY="284.0" text="PASSWORD:">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <TextField fx:id="usernameInput" layoutX="266.0" layoutY="218.0" onMouseClicked="#resetLoginPage" promptText="Enter username">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </TextField>
-      <Label layoutX="128.0" layoutY="224.0" text="USERNAME:">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <PasswordField fx:id="password" layoutX="266.0" layoutY="279.0" onMouseClicked="#resetLoginPage" promptText="Enter password">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </PasswordField>
-      <Button layoutX="374.0" layoutY="386.0" mnemonicParsing="false" onAction="#loginCustomer" text="Sign In">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button layoutX="694.0" layoutY="66.0" mnemonicParsing="false" onAction="#exit" text="EXIT">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="53.0" layoutY="520.0" mnemonicParsing="false" onAction="#back" text="BACK">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Label fx:id="usernameNonexistent" layoutX="539.0" layoutY="231.0" text="Account with this username does not exist." textFill="RED" visible="false" />
-      <Label fx:id="incorrectPassword" layoutX="551.0" layoutY="292.0" text="Incorrect password" textFill="RED" visible="false" />
-   </children>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.Login">
+   <Pane layoutX="333.0" layoutY="81.0"/>
+   <Label layoutX="360.0" layoutY="120.0" text="SIGN IN">
+      <font>
+         <Font size="38.0"/>
+      </font>
+   </Label>
+   <Label layoutX="127.0" layoutY="284.0" text="PASSWORD:">
+      <font>
+         <Font size="20.0"/>
+      </font>
+   </Label>
+   <TextField fx:id="usernameInput" layoutX="266.0" layoutY="218.0" onMouseClicked="#resetLoginPage"
+              promptText="Enter username">
+      <font>
+         <Font size="20.0"/>
+      </font>
+   </TextField>
+   <Label layoutX="128.0" layoutY="224.0" text="USERNAME:">
+      <font>
+         <Font size="20.0"/>
+      </font>
+   </Label>
+   <PasswordField fx:id="password" layoutX="266.0" layoutY="279.0" onMouseClicked="#resetLoginPage"
+                  promptText="Enter password">
+      <font>
+         <Font size="20.0"/>
+      </font>
+   </PasswordField>
+   <Button layoutX="374.0" layoutY="386.0" mnemonicParsing="false" onAction="#loginCustomer" text="Sign In">
+      <font>
+         <Font size="20.0"/>
+      </font>
+   </Button>
+   <Button layoutX="694.0" layoutY="66.0" mnemonicParsing="false" onAction="#exit" text="EXIT">
+      <font>
+         <Font size="15.0"/>
+      </font>
+   </Button>
+   <Button layoutX="53.0" layoutY="520.0" mnemonicParsing="false" onAction="#back" text="BACK">
+      <font>
+         <Font size="15.0"/>
+      </font>
+   </Button>
+   <Label fx:id="usernameNonexistent" layoutX="539.0" layoutY="231.0" text="Account with this username does not exist."
+          textFill="RED" visible="false"/>
+   <Label fx:id="incorrectPassword" layoutX="551.0" layoutY="292.0" text="Incorrect password" textFill="RED"
+          visible="false"/>
 </AnchorPane>
