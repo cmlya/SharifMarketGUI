@@ -83,7 +83,7 @@
                      <TextField fx:id="buyingPriceInput" onKeyTyped="#validateInput" promptText="buying price" />
                      <TextField fx:id="inStockInput" onKeyTyped="#validateInput" promptText="in stock" />
                      <Button fx:id="add" disable="true" mnemonicParsing="false" onAction="#addItem" text="Add" />
-                     <Button fx:id="remove" disable="true" mnemonicParsing="false" text="Remove" />
+                     <Button fx:id="remove" mnemonicParsing="false" onAction="#removeItem" text="Remove" />
                   </children>
                </HBox>
                <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">

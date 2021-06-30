@@ -11,7 +11,6 @@ public class Customer {
         this.username = username;
         this.password = password;
         Database.getInstance().addCustomer(this);
-        write();
     }
 
     public static Customer findCustomer(String username) {

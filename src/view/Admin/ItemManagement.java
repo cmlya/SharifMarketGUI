@@ -88,8 +88,7 @@ public class ItemManagement {
 
     @FXML
     private void addItem() {
-        int ID = randomCode();
-        new Item(nameInput.getText(), ID, Integer.parseInt(buyingPriceInput.getText()),
+        new Item(nameInput.getText(), randomCode(), Integer.parseInt(buyingPriceInput.getText()),
                 Integer.parseInt(sellingPriceInput.getText()), Integer.parseInt(inStockInput.getText()));
         nameInput.clear();
         buyingPriceInput.clear();
@@ -99,7 +98,15 @@ public class ItemManagement {
         setDisplay();
     }
 
+    @FXML
     private void removeItem() {
+        ObservableList<Item> itemsSelected = itemTableView.getSelectionModel().getSelectedItems();
+        ObservableList<Item> items = itemTableView.getItems();
+        for (Item item : itemsSelected) {
+            Database.getInstance().addDeletedItem(item);
+            Database.getInstance().removeItem(item);
+        }
+        itemsSelected.forEach(items :: remove);
     }
 
     private void showItems() {

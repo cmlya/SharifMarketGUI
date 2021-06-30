@@ -43,22 +43,31 @@ public class Database {
         catch (IOException e) { e.printStackTrace(); }
     }
 
-    public void addCustomer(Customer customer) { customers.add(customer); }
+    public void addCustomer(Customer customer) {
+        customers.add(customer);
+        write();
+    }
     public void addItem(Item item) { items.add(item); }
-    public void addDeletedItem(Item item) { deletedItems.add(item); }
+    public void setCurrentCustomer(Customer currentCustomer) {
+        this.currentCustomer = currentCustomer;
+        write();
+    }
+    public void removeItem(Item item) {
+        items.remove(item);
+        write();
+    }
+    public void addDeletedItem(Item item) {
+        deletedItems.add(item);
+        write();
+    }
     public void addOrder(Order order) { orders.add(order); }
     public void removeOrder(Order order) { orders.remove(order); }
     public void addOrderHistory(Order order) { orderHistory.add(order); }
-    public void removeItem(Item item) { items.remove(item); }
     public void setName(Item item, String newName) { item.setName(newName); }
     public void setCount(Item item, int newCount) { item.setInStock(newCount); }
     public void setSellingPrice(Item item, int newSellingPrice) { item.setSellingPrice(newSellingPrice); }
     public void setBuyingPrice(Item item, int newBuyingPrice) { item.setBuyingPrice(newBuyingPrice); }
     public Customer getCurrentCustomer() { return currentCustomer; }
-    public void setCurrentCustomer(Customer currentCustomer) {
-        this.currentCustomer = currentCustomer;
-        write();
-    }
     public ArrayList<Item> getItems() { return items; }
     public ArrayList<Item> getDeletedItems() { return deletedItems; }
     public ArrayList<Order> getOrders() { return orders; }
