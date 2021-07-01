@@ -46,7 +46,7 @@
          </font>
       </Label>
       <VBox fx:id="vBox" layoutX="17.0" layoutY="121.0" prefHeight="473.0" prefWidth="766.0">
-         <TableView fx:id="itemTableView" prefHeight="435.0" prefWidth="766.0" visible="false">
+         <TableView fx:id="itemTableView" onMouseDragged="#editable" prefHeight="435.0" prefWidth="766.0" visible="false">
             <columns>
                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Item Name" />
                <TableColumn fx:id="codeColumn" prefWidth="75.0" text="Item Code" />
@@ -114,5 +114,6 @@
             </children>
          </VBox>
       </VBox>
+      <Label layoutX="20.0" layoutY="26.0" text="* Double Click on field to edit" />
    </Pane>
 </AnchorPane>

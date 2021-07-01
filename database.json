@@ -30,7 +30,7 @@
       "itemProfit": 0
     },
     {
-      "name": "Pizza",
+      "name": "Hamburger",
       "inStock": 13,
       "buyingPrice": 20000,
       "sellingPrice": 56000,
@@ -41,19 +41,8 @@
       "itemProfit": 0
     },
     {
-      "name": "Banana",
-      "inStock": 16,
-      "buyingPrice": 1000,
-      "sellingPrice": 3000,
-      "ID": 514340,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
-    },
-    {
       "name": "Potato",
-      "inStock": 45,
+      "inStock": 30,
       "buyingPrice": 100,
       "sellingPrice": 1000,
       "ID": 174350,
@@ -64,9 +53,9 @@
     },
     {
       "name": "Roast Beef",
-      "inStock": 12,
+      "inStock": 4,
       "buyingPrice": 40000,
-      "sellingPrice": 80000,
+      "sellingPrice": 140000,
       "ID": 945074,
       "ordersIn": 0,
       "numberSold": 0,
@@ -74,11 +63,22 @@
       "itemProfit": 0
     },
     {
-      "name": "CocaCola",
-      "inStock": 40,
+      "name": "Pepsi",
+      "inStock": 25,
       "buyingPrice": 100,
-      "sellingPrice": 1500,
+      "sellingPrice": 1200,
       "ID": 334461,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Pepper",
+      "inStock": 31,
+      "buyingPrice": 1500,
+      "sellingPrice": 4500,
+      "ID": 325956,
       "ordersIn": 0,
       "numberSold": 0,
       "moneyMadeFrom": 0,

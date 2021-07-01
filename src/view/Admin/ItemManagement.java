@@ -1,4 +1,4 @@
-package view.Admin; // ADMIN
+package view.Admin;
 
 import controller.Database;
 import controller.Item;
@@ -7,9 +7,13 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.util.converter.IntegerStringConverter;
 import java.io.IOException;
+
+import static controller.Database.write;
 import static controller.Utils.randomCode;
 import static view.Admin.AdminUtils.setScene;
 
@@ -18,11 +22,11 @@ public class ItemManagement {
     @FXML RadioButton unavailableItems = new RadioButton();
     @FXML VBox vBox = new VBox();
     @FXML TableView<Item> itemTableView = new TableView<>();
-    @FXML TableColumn<Item, String> nameColumn = new TableColumn<>("Item Name");
-    @FXML TableColumn<Item, Integer> codeColumn = new TableColumn<>("Item Code");
-    @FXML TableColumn<Item, Integer> sellingPriceColumn = new TableColumn<>("Selling Price");
-    @FXML TableColumn<Item, Integer> buyingPriceColumn = new TableColumn<>("Buying Price");
-    @FXML TableColumn<Item, Integer> inStockColumn = new TableColumn<>("In Stock");
+    @FXML TableColumn<Item, String> nameColumn = new TableColumn<>();
+    @FXML TableColumn<Item, Integer> codeColumn = new TableColumn<>();
+    @FXML TableColumn<Item, Integer> sellingPriceColumn = new TableColumn<>();
+    @FXML TableColumn<Item, Integer> buyingPriceColumn = new TableColumn<>();
+    @FXML TableColumn<Item, Integer> inStockColumn = new TableColumn<>();
     Boolean showAvailable = false;
     Boolean showUnavailable = false;
     @FXML TextField nameInput = new TextField();
@@ -82,7 +86,6 @@ public class ItemManagement {
             invalidInputs.setVisible(true);
             validItem = false;
         }
-
         add.setDisable(!validItem);
     }
 
@@ -139,6 +142,50 @@ public class ItemManagement {
             if (item.getInStock() == 0)
                 items.add(item);
         return items;
+    }
+
+    // TODO in stock, buying price and selling price validation, displaying alert messages
+    @FXML
+    private void editable() {
+        nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        nameColumn.setOnEditCommit(e -> {
+            if (validNewName(e.getNewValue())) {
+                e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
+                write();
+            }
+            itemTableView.refresh();
+        });
+        buyingPriceColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        buyingPriceColumn.setOnEditCommit(e -> {
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setBuyingPrice(e.getNewValue());
+            write();
+        });
+        sellingPriceColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        sellingPriceColumn.setOnEditCommit(e -> {
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setSellingPrice(e.getNewValue());
+            write();
+        });
+        inStockColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        inStockColumn.setOnEditCommit(e -> {
+            e.getTableView().getItems().get(e.getTablePosition().getRow()).setInStock(e.getNewValue());
+            write();
+            itemTableView.refresh();
+        });
+        itemTableView.setEditable(true);
+    }
+
+    private boolean validNewName(String newName) {
+        if (Item.findItemByName(newName) != null) return false;
+        return newName.matches(".*[a-z].*");
+    }
+
+    // TODO
+    private boolean validInStock(String newInStock) {
+        try {
+            int tmp = Integer.parseInt(newInStock);
+            return true;
+        }
+        catch (NumberFormatException e) { return false; }
     }
 
     @FXML private void exit() { AdminUtils.exit(); }

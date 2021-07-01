@@ -1,9 +1,7 @@
 package controller;
 
 import model.ConsoleColors;
-
 import java.util.Locale;
-
 import static controller.Database.write;
 import static controller.Utils.digitCount;
 import static controller.Utils.spaces;
