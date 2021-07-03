@@ -21,6 +21,7 @@ public class UserView extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("LoginSignupMenu.fxml")));
         stage.setTitle("SHARIF MARKET");
         stage.setScene(new Scene(root, STAGE_WIDTH, STAGE_HEIGHT));
+        stage.setResizable(false);
         stage.setOnCloseRequest(e -> Database.getInstance().setCurrentCustomer(null));
         stage.show();
     }

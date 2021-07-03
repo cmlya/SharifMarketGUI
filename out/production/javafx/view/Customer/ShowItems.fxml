@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,39 +9,48 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="view.Customer.ShowItems">
-   <Pane fx:id="pane" layoutX="42.0" layoutY="110.0" prefHeight="450.0" prefWidth="734.0">
-      <VBox fx:id="vBox" layoutX="20.0" layoutY="44.0" prefHeight="406.0" prefWidth="695.0">
-         <TableView fx:id="itemTableView" prefHeight="296.0" prefWidth="327.0" visible="false">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Customer.ShowItems">
+   <Pane fx:id="pane" layoutX="42.0" layoutY="110.0" prefHeight="414.0" prefWidth="734.0">
+      <VBox fx:id="vBox" layoutX="20.0" layoutY="44.0" prefHeight="364.0" prefWidth="695.0">
+         <TableView fx:id="itemTableView" onMouseClicked="#setControls" prefHeight="296.0" prefWidth="327.0" visible="false">
             <columns>
-               <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Item Name"/>
-               <TableColumn fx:id="codeColumn" prefWidth="75.0" text="Item Code"/>
-               <TableColumn fx:id="sellingPriceColumn" prefWidth="75.0" text="Price"/>
-               <TableColumn fx:id="inStockColumn" prefWidth="75.0" text="In Stock"/>
+               <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Item Name" />
+               <TableColumn fx:id="codeColumn" prefWidth="75.0" text="Item Code" />
+               <TableColumn fx:id="sellingPriceColumn" prefWidth="75.0" text="Price" />
+               <TableColumn fx:id="inStockColumn" prefWidth="75.0" text="In Stock" />
             </columns>
          </TableView>
       </VBox>
-      <Button layoutX="377.0" layoutY="-21.0" mnemonicParsing="false" onAction="#showOutOfStock"
-              text="Items Out of Stock">
-         <font>
-            <Font size="20.0"/>
-         </font>
-      </Button>
    </Pane>
    <Button layoutX="722.0" layoutY="45.0" mnemonicParsing="false" onAction="#exit" text="EXIT">
       <font>
-         <Font size="15.0"/>
+         <Font size="15.0" />
       </font>
    </Button>
    <Button layoutX="590.0" layoutY="45.0" mnemonicParsing="false" onAction="#mainMenu" text="MAIN MENU">
       <font>
-         <Font size="15.0"/>
+         <Font size="15.0" />
       </font>
    </Button>
-   <Button layoutX="221.0" layoutY="89.0" mnemonicParsing="false" onAction="#showInStock" text="Items In Stock">
+   <Button layoutX="127.0" layoutY="89.0" mnemonicParsing="false" onAction="#showInStock" text="Items In Stock">
       <font>
-         <Font size="20.0"/>
+         <Font size="20.0" />
+      </font>
+   </Button>
+   <Button fx:id="order" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="510.0" layoutY="524.0" mnemonicParsing="false" onAction="#order" text="Order" visible="false">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Button>
+   <Spinner fx:id="count" disable="true" layoutX="313.0" layoutY="527.0" visible="false" />
+   <Button layoutX="304.0" layoutY="89.0" mnemonicParsing="false" onAction="#showOutOfStock" text="Items Out of Stock">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Button>
+   <Button fx:id="myOrders" layoutX="523.0" layoutY="89.0" mnemonicParsing="false" onAction="#myOrders" text="My Orders">
+      <font>
+         <Font size="20.0" />
       </font>
    </Button>
 </AnchorPane>

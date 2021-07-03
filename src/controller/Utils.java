@@ -17,7 +17,7 @@ public class Utils {
 
     static String spaces(String word, int maxLength) { return " ".repeat(Math.max(0, maxLength - word.length() + 1)); }
 
-    static String date() {
+    public static String date() {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         return dateTimeFormatter.format(LocalDateTime.now());
     }

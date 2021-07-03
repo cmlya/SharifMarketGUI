@@ -1,8 +1,6 @@
 package controller;
 
-import model.ConsoleColors;
-import static controller.Utils.digitCount;
-import static controller.Utils.spaces;
+import static controller.Database.write;
 
 public class Order {
     private final String username;
@@ -12,7 +10,6 @@ public class Order {
     private final int orderID;
     private final String itemName;
 
-    // constructor
     public Order(String username, String date, int itemID, int number, int orderID, String itemName) {
         this.username = username;
         this.date = date;
@@ -21,6 +18,7 @@ public class Order {
         this.orderID = orderID;
         this.itemName = itemName;
         Database.getInstance().addOrder(this);
+        write();
     }
 
     public static Order findOrder(int orderID) {

@@ -65,21 +65,6 @@ public class UserInputProcessor {
 //            Database.getInstance().setCurrentCustomer(Customer.findCustomer(ID));
 //    }
 
-    private void allItems(Matcher matcher) {
-        if (matcher.find())
-            Item.printAll();
-    }
-
-    private void itemsInStock(Matcher matcher) {
-        if (matcher.find())
-           Item.printInStock();
-    }
-
-    private void outOfStock(Matcher matcher) {
-        if (matcher.find())
-            Item.printOutOfStock();
-    }
-
     private void order(Matcher matcher) {
         if (matcher.find()) {
             int itemID = Integer.parseInt(matcher.group(1));
@@ -114,7 +99,7 @@ public class UserInputProcessor {
                         ConsoleColors.RESET + ". Your order ID is: " + ConsoleColors.GREEN_BACKGROUND +
                         orderID + ConsoleColors.RESET);
             }
-            else System.out.println(ConsoleColors.RED_BACKGROUND +"Order was not placed." + ConsoleColors.RESET);
+            else System.out.println(ConsoleColors.RED_BACKGROUND + "Order was not placed." + ConsoleColors.RESET);
         }
     }
 

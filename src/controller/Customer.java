@@ -26,4 +26,7 @@ public class Customer {
         this.password = password;
         write();
     }
+
+    public long getWallet() { return wallet; }
+    public void setWallet(long wallet) { this.wallet = wallet; }
 }

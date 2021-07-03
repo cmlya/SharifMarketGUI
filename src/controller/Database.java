@@ -60,11 +60,19 @@ public class Database {
         deletedItems.add(item);
         write();
     }
+    public void setCount(Item item, int newCount) {
+        item.setInStock(newCount);
+        write();
+    }
+
+    public void setWallet(Customer customer, long newWallet) {
+        customer.setWallet(newWallet);
+        write();
+    }
     public void addOrder(Order order) { orders.add(order); }
     public void removeOrder(Order order) { orders.remove(order); }
     public void addOrderHistory(Order order) { orderHistory.add(order); }
     public void setName(Item item, String newName) { item.setName(newName); }
-    public void setCount(Item item, int newCount) { item.setInStock(newCount); }
     public void setSellingPrice(Item item, int newSellingPrice) { item.setSellingPrice(newSellingPrice); }
     public void setBuyingPrice(Item item, int newBuyingPrice) { item.setBuyingPrice(newBuyingPrice); }
     public Customer getCurrentCustomer() { return currentCustomer; }
