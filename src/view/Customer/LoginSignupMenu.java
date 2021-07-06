@@ -7,5 +7,5 @@ import static view.Customer.UserUtils.setScene;
 public class LoginSignupMenu {
     @FXML private void signup() throws IOException { setScene("Signup.fxml"); }
     @FXML private void login() throws IOException { setScene("Login.fxml"); }
-    @FXML private void exit() { UserUtils.exit(); }
+    @FXML private void exitButton() { UserUtils.exit(); }
 }

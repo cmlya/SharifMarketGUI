@@ -22,7 +22,7 @@
          </TableView>
       </VBox>
    </Pane>
-   <Button layoutX="722.0" layoutY="45.0" mnemonicParsing="false" onAction="#exit" text="EXIT">
+   <Button layoutX="722.0" layoutY="45.0" mnemonicParsing="false" onAction="#exitButton" text="EXIT">
       <font>
          <Font size="15.0" />
       </font>

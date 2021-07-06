@@ -47,5 +47,5 @@ public class ChangePassword2 {
         new Thread(sleeper).start();
     }
     @FXML private void mainMenu () throws IOException { setScene("MainMenu.fxml"); }
-    @FXML private void exit() { UserUtils.exit(); }
+    @FXML private void exitButton() { UserUtils.exit(); }
 }

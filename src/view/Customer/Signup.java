@@ -56,5 +56,5 @@ public class Signup {
     }
 
     @FXML private void back() throws IOException { setScene("LoginSignupMenu.fxml"); }
-    @FXML private void exit() { UserUtils.exit(); }
+    @FXML private void exitButton() { UserUtils.exit(); }
 }

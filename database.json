@@ -112,30 +112,6 @@
   "orders": [
     {
       "username": "user",
-      "date": "2021/07/03 19:12:18",
-      "itemID": 174350,
-      "number": 1,
-      "orderID": 121174,
-      "itemName": "Potato"
-    },
-    {
-      "username": "user",
-      "date": "2021/07/03 19:13:08",
-      "itemID": 174350,
-      "number": 1,
-      "orderID": 808927,
-      "itemName": "Potato"
-    },
-    {
-      "username": "user",
-      "date": "2021/07/03 19:13:12",
-      "itemID": 174350,
-      "number": 1,
-      "orderID": 761658,
-      "itemName": "Potato"
-    },
-    {
-      "username": "user",
       "date": "2021/07/03 19:26:49",
       "itemID": 945074,
       "number": 3,
@@ -165,38 +141,6 @@
       "number": 2,
       "orderID": 998121,
       "itemName": "Hamburger"
-    },
-    {
-      "username": "user",
-      "date": "2021/07/03 19:34:12",
-      "itemID": 945074,
-      "number": 1,
-      "orderID": 973018,
-      "itemName": "Roast Beef"
-    },
-    {
-      "username": "user",
-      "date": "2021/07/03 19:36:19",
-      "itemID": 174350,
-      "number": 1,
-      "orderID": 719935,
-      "itemName": "Potato"
-    },
-    {
-      "username": "user",
-      "date": "2021/07/03 19:38:29",
-      "itemID": 325956,
-      "number": 4,
-      "orderID": 729807,
-      "itemName": "Pepper"
-    },
-    {
-      "username": "user",
-      "date": "2021/07/03 19:38:38",
-      "itemID": 174350,
-      "number": 2,
-      "orderID": 28665,
-      "itemName": "Potato"
     }
   ],
   "orderHistory": []

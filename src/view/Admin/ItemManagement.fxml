@@ -33,7 +33,7 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#exit" text="EXIT">
+            <Button mnemonicParsing="false" onAction="#exitButton" text="EXIT">
                <font>
                   <Font size="15.0" />
                </font>

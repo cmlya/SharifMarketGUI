@@ -188,6 +188,6 @@ public class ItemManagement {
         catch (NumberFormatException e) { return false; }
     }
 
-    @FXML private void exit() { AdminUtils.exit(); }
+    @FXML private void exitButton() { AdminUtils.exit(); }
     @FXML private void mainMenu () throws IOException { setScene("AdminMainMenu.fxml"); }
 }

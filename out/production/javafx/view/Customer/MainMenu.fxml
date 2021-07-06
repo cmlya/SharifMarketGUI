@@ -16,7 +16,7 @@
             <Font size="38.0"/>
          </font>
       </Label>
-      <Button layoutX="670.0" layoutY="58.0" mnemonicParsing="false" onAction="#exit" text="EXIT">
+      <Button layoutX="670.0" layoutY="58.0" mnemonicParsing="false" onAction="#exitButton" text="EXIT">
          <font>
             <Font size="15.0"/>
          </font>

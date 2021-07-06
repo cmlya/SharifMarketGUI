@@ -4,8 +4,6 @@ import controller.Customer;
 import controller.Database;
 import controller.Item;
 import controller.Order;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,7 +12,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
-import java.util.Objects;
 import static controller.Utils.date;
 import static controller.Utils.randomCode;
 import static view.Customer.UserUtils.setScene;
@@ -108,5 +105,5 @@ public class ShowItems {
 
     @FXML private void mainMenu () throws IOException { setScene("MainMenu.fxml"); }
     @FXML private void myOrders() throws IOException { setScene("MyOrders.fxml"); }
-    @FXML private void exit() { UserUtils.exit(); }
+    @FXML private void exitButton() { UserUtils.exit(); }
 }

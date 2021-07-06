@@ -12,5 +12,5 @@ public class MainMenu {
         setScene("LoginSignupMenu.fxml");
         Database.getInstance().setCurrentCustomer(null);
     }
-    @FXML private void exit() { UserUtils.exit(); }
+    @FXML private void exitButton() { UserUtils.exit(); }
 }
