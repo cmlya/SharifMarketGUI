@@ -1,6 +1,6 @@
 package controller;
 
-import static controller.Database.write;
+import java.util.Objects;
 
 public class Order {
     private final String username;
@@ -9,6 +9,7 @@ public class Order {
     private final int number;
     private final int orderID;
     private final String itemName;
+    private final long spent;
 
     public Order(String username, String date, int itemID, int number, int orderID, String itemName) {
         this.username = username;
@@ -17,8 +18,8 @@ public class Order {
         this.number = number;
         this.orderID = orderID;
         this.itemName = itemName;
+        this.spent = (long) Objects.requireNonNull(Item.findItem(itemID)).getSellingPrice() * number;
         Database.getInstance().addOrder(this);
-        write();
     }
 
     public static Order findOrder(int orderID) {
@@ -93,6 +94,10 @@ public class Order {
     }
 */
     public String getUsername() { return username; }
+    public String getDate() { return date; }
     public int getItemID() { return itemID; }
     public int getNumber() { return number; }
+    public int getOrderID() { return orderID; }
+    public String getItemName() { return itemName; }
+    public long getSpent() { return spent; }
 }

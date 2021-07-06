@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Customer.ShowItems">
    <Pane fx:id="pane" layoutX="42.0" layoutY="110.0" prefHeight="414.0" prefWidth="734.0">
-      <VBox fx:id="vBox" layoutX="20.0" layoutY="44.0" prefHeight="364.0" prefWidth="695.0">
+      <VBox layoutX="20.0" layoutY="25.0" prefHeight="364.0" prefWidth="695.0">
          <TableView fx:id="itemTableView" onMouseClicked="#setControls" prefHeight="296.0" prefWidth="327.0" visible="false">
             <columns>
                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Item Name" />
@@ -21,6 +21,16 @@
             </columns>
          </TableView>
       </VBox>
+      <TableView fx:id="orderTableView" layoutY="32.0" onMouseClicked="#setControls" prefHeight="334.0" prefWidth="734.0" visible="false">
+         <columns>
+            <TableColumn fx:id="orderIDColumn" prefWidth="75.0" text="Order ID" />
+            <TableColumn fx:id="itemNameColumn" prefWidth="75.0" text="Item Name" />
+            <TableColumn fx:id="itemIDColumn" prefWidth="61.5" text="Item ID" />
+            <TableColumn fx:id="countColumn" prefWidth="75.0" text="Count" />
+            <TableColumn fx:id="spentColumn" prefWidth="97.0" text="Money Spent" />
+            <TableColumn fx:id="dateColumn" prefWidth="106.5" text="Date Ordered" />
+         </columns>
+      </TableView>
    </Pane>
    <Button layoutX="722.0" layoutY="45.0" mnemonicParsing="false" onAction="#exitButton" text="EXIT">
       <font>
@@ -51,6 +61,11 @@
    <Button fx:id="myOrders" layoutX="523.0" layoutY="89.0" mnemonicParsing="false" onAction="#myOrders" text="My Orders">
       <font>
          <Font size="20.0" />
+      </font>
+   </Button>
+   <Button fx:id="cancelOrder" disable="true" layoutX="357.0" layoutY="528.0" mnemonicParsing="false" onAction="#cancelOrder" text="Cancel Order" visible="false">
+      <font>
+         <Font size="15.0" />
       </font>
    </Button>
 </AnchorPane>

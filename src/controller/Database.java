@@ -47,7 +47,10 @@ public class Database {
         customers.add(customer);
         write();
     }
-    public void addItem(Item item) { items.add(item); }
+    public void addItem(Item item) {
+        items.add(item);
+        write();
+    }
     public void setCurrentCustomer(Customer currentCustomer) {
         this.currentCustomer = currentCustomer;
         write();
@@ -64,13 +67,18 @@ public class Database {
         item.setInStock(newCount);
         write();
     }
-
     public void setWallet(Customer customer, long newWallet) {
         customer.setWallet(newWallet);
         write();
     }
-    public void addOrder(Order order) { orders.add(order); }
-    public void removeOrder(Order order) { orders.remove(order); }
+    public void addOrder(Order order) {
+        orders.add(order);
+        write();
+    }
+    public void removeOrder(Order order) {
+        orders.remove(order);
+        write();
+    }
     public void addOrderHistory(Order order) { orderHistory.add(order); }
     public void setName(Item item, String newName) { item.setName(newName); }
     public void setSellingPrice(Item item, int newSellingPrice) { item.setSellingPrice(newSellingPrice); }

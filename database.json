@@ -3,7 +3,12 @@
     {
       "username": "user",
       "password": "pass",
-      "wallet": 290500
+      "wallet": 288900
+    },
+    {
+      "username": "newuser",
+      "password": "pass",
+      "wallet": 887000
     }
   ],
   "items": [
@@ -31,7 +36,7 @@
     },
     {
       "name": "Hamburger",
-      "inStock": 11,
+      "inStock": 9,
       "buyingPrice": 20000,
       "sellingPrice": 56000,
       "ID": 994867,
@@ -42,7 +47,7 @@
     },
     {
       "name": "Potato",
-      "inStock": 24,
+      "inStock": 25,
       "buyingPrice": 100,
       "sellingPrice": 1000,
       "ID": 174350,
@@ -64,7 +69,7 @@
     },
     {
       "name": "Pepsi",
-      "inStock": 25,
+      "inStock": 22,
       "buyingPrice": 100,
       "sellingPrice": 1200,
       "ID": 334461,
@@ -112,35 +117,21 @@
   "orders": [
     {
       "username": "user",
-      "date": "2021/07/03 19:26:49",
-      "itemID": 945074,
+      "date": "2021/07/06 00:51:37",
+      "itemID": 174350,
       "number": 3,
-      "orderID": 942211,
-      "itemName": "Roast Beef"
+      "orderID": 619352,
+      "itemName": "Potato",
+      "spent": 3000
     },
     {
       "username": "user",
-      "date": "2021/07/03 19:28:25",
-      "itemID": 325956,
-      "number": 1,
-      "orderID": 134695,
-      "itemName": "Pepper"
-    },
-    {
-      "username": "user",
-      "date": "2021/07/03 19:28:32",
-      "itemID": 325956,
-      "number": 2,
-      "orderID": 869029,
-      "itemName": "Pepper"
-    },
-    {
-      "username": "user",
-      "date": "2021/07/03 19:34:05",
-      "itemID": 994867,
-      "number": 2,
-      "orderID": 998121,
-      "itemName": "Hamburger"
+      "date": "2021/07/06 00:51:42",
+      "itemID": 334461,
+      "number": 3,
+      "orderID": 644000,
+      "itemName": "Pepsi",
+      "spent": 3600
     }
   ],
   "orderHistory": []

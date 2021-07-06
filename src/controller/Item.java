@@ -2,7 +2,6 @@ package controller;
 
 import model.ConsoleColors;
 import java.util.Locale;
-import static controller.Database.write;
 import static controller.Utils.digitCount;
 import static controller.Utils.spaces;
 
@@ -24,7 +23,6 @@ public class Item {
         this.sellingPrice = sellingPrice;
         this.inStock = inStock;
         Database.getInstance().addItem(this);
-        write();
     }
 
     public static Item findItemByName(String name) {

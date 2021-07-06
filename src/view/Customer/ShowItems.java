@@ -10,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import java.io.IOException;
 import static controller.Utils.date;
 import static controller.Utils.randomCode;
@@ -23,19 +22,48 @@ public class ShowItems {
     @FXML TableColumn<Item, Integer> codeColumn = new TableColumn<>("Item Code");
     @FXML TableColumn<Item, Integer> sellingPriceColumn = new TableColumn<>("Price");
     @FXML TableColumn<Item, Integer> inStockColumn = new TableColumn<>("In Stock");
-    @FXML VBox vBox = new VBox();
     @FXML Button order = new Button();
     @FXML Spinner<Integer> count = new Spinner();
-    @FXML Button myOrders = new Button();
     Boolean showAvailable = true;
+    Boolean showingOrders = false;
 
-    @FXML private void showInStock() {
-        showAvailable = true;
-        showItems();
+    @FXML TableView<Order> orderTableView = new TableView<>();
+    @FXML TableColumn<Order, Integer> orderIDColumn = new TableColumn<>();
+    @FXML TableColumn<Order, String> itemNameColumn = new TableColumn<>();
+    @FXML TableColumn<Order, Integer> itemIDColumn = new TableColumn<>();
+    @FXML TableColumn<Order, Integer> countColumn = new TableColumn<>();
+    @FXML TableColumn<Order, Long> spentColumn = new TableColumn<>();
+    @FXML TableColumn<Order, String> dateColumn = new TableColumn<>();
+    @FXML Button cancelOrder = new Button();
+
+    @FXML private void showInStock() { showAvailable = true; showingOrders = false; showItems(); }
+    @FXML private void showOutOfStock() { showAvailable = false; showingOrders = false; showItems(); }
+    @FXML private void myOrders() { showingOrders = true; showAvailable = false; showOrders(); }
+
+    private void showOrders() {
+        orderIDColumn.setMinWidth(100);
+        orderIDColumn.setCellValueFactory(new PropertyValueFactory<>("orderID"));
+        itemNameColumn.setMinWidth(100);
+        itemNameColumn.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        itemIDColumn.setMinWidth(100);
+        itemIDColumn.setCellValueFactory(new PropertyValueFactory<>("itemID"));
+        countColumn.setMinWidth(50);
+        countColumn.setCellValueFactory(new PropertyValueFactory<>("number"));
+        spentColumn.setMinWidth(100);
+        spentColumn.setCellValueFactory(new PropertyValueFactory<>("spent"));
+        dateColumn.setMinWidth(150);
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        orderTableView.setItems(getOrders());
+        orderTableView.setVisible(true);
+        resetControls();
     }
-    @FXML private void showOutOfStock() {
-        showAvailable = false;
-        showItems();
+
+    private ObservableList<Order> getOrders() {
+        ObservableList<Order> orders = FXCollections.observableArrayList();
+        for (Order order : Database.getInstance().getOrders())
+            if (order.getUsername().equals(Database.getInstance().getCurrentCustomer().getUsername()))
+                orders.add(order);
+        return orders;
     }
 
     private void showItems() {
@@ -66,16 +94,21 @@ public class ShowItems {
     }
 
     private void resetControls() {
+        cancelOrder.setVisible(showingOrders);
+        orderTableView.setVisible(showingOrders);
+        itemTableView.setVisible(!showingOrders);
         order.setVisible(showAvailable);
         order.setDisable(true);
         count.setVisible(showAvailable);
         count.setDisable(true);
+        cancelOrder.setDisable(true);
     }
 
     @FXML
     private void setControls() {
         order.setDisable(getItem() == null);
         count.setDisable(getItem() == null);
+        cancelOrder.setDisable(getOrder() == null);
         SpinnerValueFactory<Integer> valueFactory;
         if (getItem() != null)
             valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, getItem().getInStock());
@@ -87,6 +120,7 @@ public class ShowItems {
         count.setValueFactory(valueFactory);
     }
     @FXML private Item getItem() { return itemTableView.getSelectionModel().getSelectedItem(); }
+    @FXML private Order getOrder() { return orderTableView.getSelectionModel().getSelectedItem(); }
 
     // TODO not enough wallet
     @FXML
@@ -103,7 +137,19 @@ public class ShowItems {
         resetControls();
     }
 
+    @FXML
+    private void cancelOrder() {
+        Order order = getOrder();
+        Item item = Item.findItem(order.getItemID());
+        if (item != null) item.setInStock(item.getInStock() + order.getNumber());
+        Database.getInstance().removeOrder(order);
+        Customer customer = Database.getInstance().getCurrentCustomer();
+        Database.getInstance().setWallet(customer, customer.getWallet() + order.getSpent());
+        orderTableView.refresh();
+        itemTableView.refresh();
+        showOrders();
+    }
+
     @FXML private void mainMenu () throws IOException { setScene("MainMenu.fxml"); }
-    @FXML private void myOrders() throws IOException { setScene("MyOrders.fxml"); }
     @FXML private void exitButton() { UserUtils.exit(); }
 }
