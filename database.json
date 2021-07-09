@@ -3,136 +3,145 @@
     {
       "username": "user",
       "password": "pass",
-      "wallet": 288900
+      "wallet": -76500
     },
     {
-      "username": "newuser",
+      "username": "new",
       "password": "pass",
-      "wallet": 887000
+      "wallet": 910000
     }
   ],
-  "items": [
+  "items": [],
+  "deletedItems": [
     {
-      "name": "Rice",
+      "name": "Coffee",
       "inStock": 0,
-      "buyingPrice": 13000,
-      "sellingPrice": 20000,
-      "ID": 458638,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
+      "buyingPrice": 1000,
+      "sellingPrice": 10000,
+      "ID": 796600,
+      "ordersIn": 4,
+      "numberSold": 10,
+      "moneyMadeFrom": 100000,
+      "itemProfit": 90000
     },
     {
-      "name": "Sugar",
+      "name": "Beans",
       "inStock": 0,
-      "buyingPrice": 400,
-      "sellingPrice": 900,
-      "ID": 978740,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
+      "buyingPrice": 3000,
+      "sellingPrice": 5000,
+      "ID": 385575,
+      "ordersIn": 5,
+      "numberSold": 20,
+      "moneyMadeFrom": 100000,
+      "itemProfit": 40000
     },
     {
-      "name": "Hamburger",
-      "inStock": 9,
-      "buyingPrice": 20000,
-      "sellingPrice": 56000,
-      "ID": 994867,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
+      "name": "Sprite",
+      "inStock": 0,
+      "buyingPrice": 1000,
+      "sellingPrice": 5000,
+      "ID": 610787,
+      "ordersIn": 5,
+      "numberSold": 11,
+      "moneyMadeFrom": 55000,
+      "itemProfit": 44000
     },
     {
       "name": "Potato",
-      "inStock": 25,
+      "inStock": 7,
       "buyingPrice": 100,
       "sellingPrice": 1000,
       "ID": 174350,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
+      "ordersIn": 5,
+      "numberSold": 21,
+      "moneyMadeFrom": 21000,
+      "itemProfit": 18000
     },
     {
-      "name": "Roast Beef",
-      "inStock": 0,
-      "buyingPrice": 40000,
-      "sellingPrice": 140000,
-      "ID": 945074,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
+      "name": "Banana",
+      "inStock": 8,
+      "buyingPrice": 5000,
+      "sellingPrice": 12000,
+      "ID": 647935,
+      "ordersIn": 3,
+      "numberSold": 4,
+      "moneyMadeFrom": 48000,
+      "itemProfit": 28000
     },
     {
-      "name": "Pepsi",
-      "inStock": 22,
+      "name": "Strawberry",
+      "inStock": 36,
       "buyingPrice": 100,
-      "sellingPrice": 1200,
-      "ID": 334461,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
+      "sellingPrice": 3000,
+      "ID": 54388,
+      "ordersIn": 3,
+      "numberSold": 9,
+      "moneyMadeFrom": 27000,
+      "itemProfit": 26100
     },
     {
-      "name": "Pepper",
-      "inStock": 24,
-      "buyingPrice": 1500,
-      "sellingPrice": 4500,
-      "ID": 325956,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
+      "name": "Water",
+      "inStock": 11,
+      "buyingPrice": 200,
+      "sellingPrice": 1000,
+      "ID": 685618,
+      "ordersIn": 4,
+      "numberSold": 5,
+      "moneyMadeFrom": 5000,
+      "itemProfit": 4000
     }
   ],
-  "deletedItems": [
-    {
-      "name": "Product",
-      "inStock": 30,
-      "buyingPrice": 7000,
-      "sellingPrice": 10000,
-      "ID": 458679,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
-    },
-    {
-      "name": "Chocolate",
-      "inStock": 30,
-      "buyingPrice": 4000,
-      "sellingPrice": 10000,
-      "ID": 522880,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
-    }
-  ],
-  "orders": [
+  "orders": [],
+  "orderHistory": [
     {
       "username": "user",
-      "date": "2021/07/06 00:51:37",
-      "itemID": 174350,
-      "number": 3,
-      "orderID": 619352,
-      "itemName": "Potato",
-      "spent": 3000
+      "date": "2021/07/09 19:17:51",
+      "itemID": 385575,
+      "number": 1,
+      "orderID": 456191,
+      "itemName": "Beans",
+      "spent": 5000,
+      "profit": 2000
     },
     {
       "username": "user",
-      "date": "2021/07/06 00:51:42",
-      "itemID": 334461,
+      "date": "2021/07/09 19:22:35",
+      "itemID": 685618,
+      "number": 1,
+      "orderID": 328542,
+      "itemName": "Water",
+      "spent": 1000,
+      "profit": 800
+    },
+    {
+      "username": "user",
+      "date": "2021/07/09 19:38:20",
+      "itemID": 685618,
+      "number": 2,
+      "orderID": 526153,
+      "itemName": "Water",
+      "spent": 2000,
+      "profit": 1600
+    },
+    {
+      "username": "new",
+      "date": "2021/07/09 19:46:19",
+      "itemID": 54388,
       "number": 3,
-      "orderID": 644000,
-      "itemName": "Pepsi",
-      "spent": 3600
+      "orderID": 306911,
+      "itemName": "Strawberry",
+      "spent": 9000,
+      "profit": 8700
+    },
+    {
+      "username": "new",
+      "date": "2021/07/09 19:46:13",
+      "itemID": 685618,
+      "number": 1,
+      "orderID": 732967,
+      "itemName": "Water",
+      "spent": 1000,
+      "profit": 800
     }
-  ],
-  "orderHistory": []
+  ]
 }

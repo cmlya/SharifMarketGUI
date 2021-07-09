@@ -10,6 +10,7 @@ public class Order {
     private final int orderID;
     private final String itemName;
     private final long spent;
+    private final long profit;
 
     public Order(String username, String date, int itemID, int number, int orderID, String itemName) {
         this.username = username;
@@ -19,6 +20,8 @@ public class Order {
         this.orderID = orderID;
         this.itemName = itemName;
         this.spent = (long) Objects.requireNonNull(Item.findItem(itemID)).getSellingPrice() * number;
+        this.profit = (long) (Objects.requireNonNull(Item.findItem(itemID)).getSellingPrice() -
+                Objects.requireNonNull(Item.findItem(itemID)).getBuyingPrice()) * number;
         Database.getInstance().addOrder(this);
     }
 
@@ -100,4 +103,5 @@ public class Order {
     public int getOrderID() { return orderID; }
     public String getItemName() { return itemName; }
     public long getSpent() { return spent; }
+    public long getProfit() { return profit; }
 }

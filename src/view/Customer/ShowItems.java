@@ -133,6 +133,7 @@ public class ShowItems {
         Database.getInstance().setCount(item, item.getInStock() - quantity);
         Database.getInstance().setWallet(customer,
                 customer.getWallet() - (long) quantity * item.getSellingPrice());
+        showItems();
         itemTableView.refresh();
         resetControls();
     }

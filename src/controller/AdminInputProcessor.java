@@ -52,12 +52,6 @@ public class AdminInputProcessor {
         }
     }
 
-    private void allItems(Matcher matcher) { if (matcher.find()) Item.printAll(); }
-
-    private void itemsInStock(Matcher matcher) { if (matcher.find()) Item.printInStock(); }
-
-    private void outOfStock(Matcher matcher) { if (matcher.find()) Item.printOutOfStock(); }
-
     private void remove(Matcher matcher) {
         if (matcher.find()) {
             int ID = Integer.parseInt(matcher.group(1));
@@ -217,13 +211,9 @@ public class AdminInputProcessor {
         }
     }
 
-    private void newOrders(Matcher matcher) {
-        //Order.printOrders();
-    }
+    private void newOrders(Matcher matcher) { /*Order.printOrders();*/}
 
-    private void history(Matcher matcher) {
-        //Order.printHistory();
-    }
+    private void history(Matcher matcher) {/*Order.printHistory();*/}
 
     private void calculateProfit(Matcher matcher) {
         if (matcher.find()) {

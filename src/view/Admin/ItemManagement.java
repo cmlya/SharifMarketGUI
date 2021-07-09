@@ -12,7 +12,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.converter.IntegerStringConverter;
 import java.io.IOException;
-
 import static controller.Database.write;
 import static controller.Utils.randomCode;
 import static view.Admin.AdminUtils.setScene;
@@ -144,7 +143,7 @@ public class ItemManagement {
         return items;
     }
 
-    // TODO in stock, buying price and selling price validation, displaying alert messages
+    // TODO in stock, buying price and selling price validation (not negative, sp>bp), displaying alert messages
     @FXML
     private void editable() {
         nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());

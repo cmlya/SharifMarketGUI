@@ -53,6 +53,13 @@ public class Item {
         item.itemProfit += count*(sellingPrice - buyingPrice);
     }
 
+    public static void updateSales(Order order, Item item) {
+        item.ordersIn++;
+        item.numberSold += order.getNumber();
+        item.moneyMadeFrom += order.getSpent();
+        item.itemProfit += order.getProfit();
+    }
+
     public static void printAll() {
         int maxLengthName = ("ITEM".length());
         int maxInStock = 99999999;
