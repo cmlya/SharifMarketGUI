@@ -40,21 +40,6 @@ public class NewOrders implements Initializable {
         orderTableView.refresh();
         checkout.setDisable(true);
         showOrders();
-
-
-/*        ObservableList<Order> ordersSelected = orderTableView.getSelectionModel().getSelectedItems();
-        ObservableList<Order> orders = orderTableView.getItems();
-        for (Order order : ordersSelected) {
-            Item item;
-            if (Item.findItem(order.getItemID()) == null)
-                item = Item.findDeletedItem(order.getItemID());
-            else item = Item.findItem(order.getItemID());
-            Item.updateSales(order, Objects.requireNonNull(item));
-            Database.getInstance().addOrderHistory(order);
-            Database.getInstance().removeOrder(order);
-        }
-        ordersSelected.forEach(orders :: remove);*/
-        // checkout.setDisable(true);
     }
 
     private void showOrders() {

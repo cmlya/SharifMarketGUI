@@ -3,7 +3,7 @@
     {
       "username": "user",
       "password": "pass",
-      "wallet": 76500
+      "wallet": 73500
     },
     {
       "username": "new",
@@ -36,14 +36,14 @@
     },
     {
       "name": "Biscuits",
-      "inStock": 47,
+      "inStock": 46,
       "buyingPrice": 400,
       "sellingPrice": 3000,
       "ID": 670519,
-      "ordersIn": 1,
-      "numberSold": 3,
-      "moneyMadeFrom": 9000,
-      "itemProfit": 7800
+      "ordersIn": 2,
+      "numberSold": 4,
+      "moneyMadeFrom": 12000,
+      "itemProfit": 10400
     },
     {
       "name": "Saghe Talaei",
@@ -239,6 +239,16 @@
       "itemName": "Raisins",
       "spent": 50000,
       "profit": 30000
+    },
+    {
+      "username": "user",
+      "date": "2021/07/10 03:41:21",
+      "itemID": 670519,
+      "number": 1,
+      "orderID": 372385,
+      "itemName": "Biscuits",
+      "spent": 3000,
+      "profit": 2600
     }
   ]
 }
