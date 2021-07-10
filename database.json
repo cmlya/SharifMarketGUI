@@ -3,15 +3,82 @@
     {
       "username": "user",
       "password": "pass",
-      "wallet": -76500
+      "wallet": 76500
     },
     {
       "username": "new",
       "password": "pass",
-      "wallet": 910000
+      "wallet": 451000
     }
   ],
-  "items": [],
+  "items": [
+    {
+      "name": "Raspberry",
+      "inStock": 0,
+      "buyingPrice": 8000,
+      "sellingPrice": 20000,
+      "ID": 276453,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Raisins",
+      "inStock": 9,
+      "buyingPrice": 4000,
+      "sellingPrice": 10000,
+      "ID": 663842,
+      "ordersIn": 1,
+      "numberSold": 5,
+      "moneyMadeFrom": 50000,
+      "itemProfit": 30000
+    },
+    {
+      "name": "Biscuits",
+      "inStock": 47,
+      "buyingPrice": 400,
+      "sellingPrice": 3000,
+      "ID": 670519,
+      "ordersIn": 1,
+      "numberSold": 3,
+      "moneyMadeFrom": 9000,
+      "itemProfit": 7800
+    },
+    {
+      "name": "Saghe Talaei",
+      "inStock": 100,
+      "buyingPrice": 100,
+      "sellingPrice": 1000,
+      "ID": 898425,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Grapes",
+      "inStock": 10,
+      "buyingPrice": 30000,
+      "sellingPrice": 80000,
+      "ID": 265227,
+      "ordersIn": 1,
+      "numberSold": 5,
+      "moneyMadeFrom": 400000,
+      "itemProfit": 250000
+    },
+    {
+      "name": "Pizza",
+      "inStock": 8,
+      "buyingPrice": 30000,
+      "sellingPrice": 75000,
+      "ID": 81682,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    }
+  ],
   "deletedItems": [
     {
       "name": "Coffee",
@@ -142,6 +209,36 @@
       "itemName": "Water",
       "spent": 1000,
       "profit": 800
+    },
+    {
+      "username": "new",
+      "date": "2021/07/10 00:18:12",
+      "itemID": 670519,
+      "number": 3,
+      "orderID": 293912,
+      "itemName": "Biscuits",
+      "spent": 9000,
+      "profit": 7800
+    },
+    {
+      "username": "new",
+      "date": "2021/07/10 00:18:10",
+      "itemID": 265227,
+      "number": 5,
+      "orderID": 816863,
+      "itemName": "Grapes",
+      "spent": 400000,
+      "profit": 250000
+    },
+    {
+      "username": "new",
+      "date": "2021/07/10 00:18:07",
+      "itemID": 663842,
+      "number": 5,
+      "orderID": 547134,
+      "itemName": "Raisins",
+      "spent": 50000,
+      "profit": 30000
     }
   ]
 }

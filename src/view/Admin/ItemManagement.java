@@ -44,6 +44,7 @@ public class ItemManagement {
     private void setDisplay() {
         showAvailable = availableItems.isSelected();
         showUnavailable = unavailableItems.isSelected();
+        setControls();
         showItems();
     }
 
@@ -102,13 +103,16 @@ public class ItemManagement {
 
     @FXML
     private void removeItem() {
-        ObservableList<Item> itemsSelected = itemTableView.getSelectionModel().getSelectedItems();
+        Item item = itemTableView.getSelectionModel().getSelectedItem();
         ObservableList<Item> items = itemTableView.getItems();
-        for (Item item : itemsSelected) {
-            Database.getInstance().addDeletedItem(item);
-            Database.getInstance().removeItem(item);
-        }
-        itemsSelected.forEach(items :: remove);
+        Database.getInstance().addDeletedItem(item);
+        Database.getInstance().removeItem(item);
+        items.remove(item);
+    }
+
+    @FXML
+    private void setControls() {
+        remove.setDisable(itemTableView.getSelectionModel().getSelectedItem() == null);
     }
 
     private void showItems() {
@@ -189,4 +193,5 @@ public class ItemManagement {
 
     @FXML private void exitButton() { AdminUtils.exit(); }
     @FXML private void mainMenu () throws IOException { setScene("AdminMainMenu.fxml"); }
+
 }
