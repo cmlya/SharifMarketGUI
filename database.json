@@ -3,7 +3,7 @@
     {
       "username": "user",
       "password": "pass",
-      "wallet": 73500
+      "wallet": 60500
     },
     {
       "username": "new",
@@ -36,25 +36,14 @@
     },
     {
       "name": "Biscuits",
-      "inStock": 46,
+      "inStock": 45,
       "buyingPrice": 400,
       "sellingPrice": 3000,
       "ID": 670519,
-      "ordersIn": 2,
-      "numberSold": 4,
-      "moneyMadeFrom": 12000,
-      "itemProfit": 10400
-    },
-    {
-      "name": "Saghe Talaei",
-      "inStock": 100,
-      "buyingPrice": 100,
-      "sellingPrice": 1000,
-      "ID": 898425,
-      "ordersIn": 0,
-      "numberSold": 0,
-      "moneyMadeFrom": 0,
-      "itemProfit": 0
+      "ordersIn": 3,
+      "numberSold": 5,
+      "moneyMadeFrom": 15000,
+      "itemProfit": 13000
     },
     {
       "name": "Grapes",
@@ -156,9 +145,101 @@
       "numberSold": 5,
       "moneyMadeFrom": 5000,
       "itemProfit": 4000
+    },
+    {
+      "name": "Saghe Talaei",
+      "inStock": 90,
+      "buyingPrice": 100,
+      "sellingPrice": 1000,
+      "ID": 898425,
+      "ordersIn": 2,
+      "numberSold": 2,
+      "moneyMadeFrom": 2000,
+      "itemProfit": 1800
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "username": "user",
+      "date": "2021/07/11 23:11:41",
+      "itemID": 898425,
+      "number": 1,
+      "orderID": 438948,
+      "itemName": "Saghe Talaei",
+      "spent": 1000,
+      "profit": 900
+    },
+    {
+      "username": "user",
+      "date": "2021/07/11 23:11:45",
+      "itemID": 898425,
+      "number": 1,
+      "orderID": 336609,
+      "itemName": "Saghe Talaei",
+      "spent": 1000,
+      "profit": 900
+    },
+    {
+      "username": "user",
+      "date": "2021/07/11 23:11:52",
+      "itemID": 898425,
+      "number": 1,
+      "orderID": 731107,
+      "itemName": "Saghe Talaei",
+      "spent": 1000,
+      "profit": 900
+    },
+    {
+      "username": "user",
+      "date": "2021/07/11 23:11:54",
+      "itemID": 898425,
+      "number": 1,
+      "orderID": 491967,
+      "itemName": "Saghe Talaei",
+      "spent": 1000,
+      "profit": 900
+    },
+    {
+      "username": "user",
+      "date": "2021/07/11 23:11:57",
+      "itemID": 898425,
+      "number": 1,
+      "orderID": 679068,
+      "itemName": "Saghe Talaei",
+      "spent": 1000,
+      "profit": 900
+    },
+    {
+      "username": "user",
+      "date": "2021/07/11 23:12:14",
+      "itemID": 898425,
+      "number": 1,
+      "orderID": 672719,
+      "itemName": "Saghe Talaei",
+      "spent": 1000,
+      "profit": 900
+    },
+    {
+      "username": "user",
+      "date": "2021/07/11 23:13:27",
+      "itemID": 898425,
+      "number": 1,
+      "orderID": 333900,
+      "itemName": "Saghe Talaei",
+      "spent": 1000,
+      "profit": 900
+    },
+    {
+      "username": "user",
+      "date": "2021/07/11 23:13:28",
+      "itemID": 898425,
+      "number": 1,
+      "orderID": 581217,
+      "itemName": "Saghe Talaei",
+      "spent": 1000,
+      "profit": 900
+    }
+  ],
   "orderHistory": [
     {
       "username": "user",
@@ -249,6 +330,36 @@
       "itemName": "Biscuits",
       "spent": 3000,
       "profit": 2600
+    },
+    {
+      "username": "user",
+      "date": "2021/07/11 23:13:44",
+      "itemID": 670519,
+      "number": 1,
+      "orderID": 993752,
+      "itemName": "Biscuits",
+      "spent": 3000,
+      "profit": 2600
+    },
+    {
+      "username": "user",
+      "date": "2021/07/11 23:13:23",
+      "itemID": 898425,
+      "number": 1,
+      "orderID": 529083,
+      "itemName": "Saghe Talaei",
+      "spent": 1000,
+      "profit": 900
+    },
+    {
+      "username": "user",
+      "date": "2021/07/11 23:13:25",
+      "itemID": 898425,
+      "number": 1,
+      "orderID": 525869,
+      "itemName": "Saghe Talaei",
+      "spent": 1000,
+      "profit": 900
     }
   ]
 }

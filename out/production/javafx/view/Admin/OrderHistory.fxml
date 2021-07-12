@@ -20,7 +20,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="orderTableView" prefHeight="200.0" prefWidth="200.0">
+                  <TableView fx:id="orderTableView" prefHeight="384.0" prefWidth="737.0">
                     <columns>
                         <TableColumn fx:id="orderIDColumn" prefWidth="75.0" text="Order ID" />
                         <TableColumn fx:id="customerColumn" prefWidth="94.5" text="Customer" />

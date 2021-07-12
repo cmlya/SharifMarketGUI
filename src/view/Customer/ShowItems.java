@@ -35,6 +35,7 @@ public class ShowItems {
     @FXML TableColumn<Order, Long> spentColumn = new TableColumn<>();
     @FXML TableColumn<Order, String> dateColumn = new TableColumn<>();
     @FXML Button cancelOrder = new Button();
+    @FXML Label notEnoughMoney = new Label();
 
     @FXML private void showInStock() { showAvailable = true; showingOrders = false; showItems(); }
     @FXML private void showOutOfStock() { showAvailable = false; showingOrders = false; showItems(); }
@@ -102,6 +103,7 @@ public class ShowItems {
         count.setVisible(showAvailable);
         count.setDisable(true);
         cancelOrder.setDisable(true);
+        notEnoughMoney.setVisible(false);
     }
 
     @FXML
@@ -109,20 +111,36 @@ public class ShowItems {
         order.setDisable(getItem() == null);
         count.setDisable(getItem() == null);
         cancelOrder.setDisable(getOrder() == null);
-        SpinnerValueFactory<Integer> valueFactory;
-        if (getItem() != null)
-            valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, getItem().getInStock());
-        else valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 1);
-        valueFactory.setValue(1);
-        count.valueProperty().addListener((observableValue, integer, t1) -> {
-         // TODO not enough wallet
-        });
-        count.setValueFactory(valueFactory);
+        notEnoughMoney.setVisible(false);
+        if (showAvailable) {
+            SpinnerValueFactory<Integer> valueFactory;
+            if (getItem() != null)
+                valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, getItem().getInStock());
+            else valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 1);
+            valueFactory.setValue(1);
+            count.setValueFactory(valueFactory);
+            walletCheck();
+            count.valueProperty().addListener((observableValue, integer, t1) -> {
+                walletCheck();
+            });
+        }
     }
+
+    private void walletCheck() {
+        if ((long) count.getValue() * getItem().getSellingPrice() >
+                Database.getInstance().getCurrentCustomer().getWallet()) {
+            order.setDisable(true);
+            notEnoughMoney.setVisible(true);
+        }
+        else {
+            order.setDisable(false);
+            notEnoughMoney.setVisible(false);
+        }
+    }
+
     @FXML private Item getItem() { return itemTableView.getSelectionModel().getSelectedItem(); }
     @FXML private Order getOrder() { return orderTableView.getSelectionModel().getSelectedItem(); }
 
-    // TODO not enough wallet
     @FXML
     private void order() {
         Item item = getItem();
