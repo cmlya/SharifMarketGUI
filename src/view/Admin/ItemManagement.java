@@ -15,6 +15,7 @@ import java.io.IOException;
 import static controller.Database.write;
 import static controller.Utils.randomCode;
 import static view.Admin.AdminUtils.setScene;
+import sample.Alert;
 
 public class ItemManagement {
     @FXML RadioButton availableItems = new RadioButton();
@@ -111,9 +112,7 @@ public class ItemManagement {
     }
 
     @FXML
-    private void setControls() {
-        remove.setDisable(itemTableView.getSelectionModel().getSelectedItem() == null);
-    }
+    private void setControls() { remove.setDisable(itemTableView.getSelectionModel().getSelectedItem() == null); }
 
     private void showItems() {
         nameColumn.setMinWidth(100);
@@ -156,6 +155,7 @@ public class ItemManagement {
                 e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
                 write();
             }
+            else Alert.display("Error", "Invalid item name.");
             itemTableView.refresh();
         });
         buyingPriceColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));

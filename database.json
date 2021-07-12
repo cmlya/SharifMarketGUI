@@ -47,7 +47,7 @@
     },
     {
       "name": "Grapes",
-      "inStock": 10,
+      "inStock": 8,
       "buyingPrice": 30000,
       "sellingPrice": 80000,
       "ID": 265227,
