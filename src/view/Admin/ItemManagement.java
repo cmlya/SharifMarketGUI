@@ -10,8 +10,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.util.converter.IntegerStringConverter;
 import java.io.IOException;
+import java.util.Locale;
+
 import static controller.Database.write;
 import static controller.Utils.randomCode;
 import static view.Admin.AdminUtils.setScene;
@@ -111,7 +112,6 @@ public class ItemManagement {
         items.remove(item);
     }
 
-    @FXML
     private void setControls() { remove.setDisable(itemTableView.getSelectionModel().getSelectedItem() == null); }
 
     private void showItems() {
@@ -149,37 +149,58 @@ public class ItemManagement {
     // TODO in stock, buying price and selling price validation (not negative, sp>bp), displaying alert messages
     @FXML
     private void editable() {
+        setControls();
+        if (itemTableView.getSelectionModel().getSelectedItem() == null)
+            return;
+        Item item = itemTableView.getSelectionModel().getSelectedItem();
+
         nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         nameColumn.setOnEditCommit(e -> {
-            if (validNewName(e.getNewValue())) {
+            if (validNewName(e.getNewValue(), item) == 1)
+                Alert.display("Error", "Item with this name already exists.");
+            else if (validNewName(e.getNewValue(), item) == 2)
+                Alert.display("Invalid Name", "Name must contain letters.");
+            else if (validNewName(e.getNewValue(), item) == 0) {
                 e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
                 write();
             }
             else Alert.display("Error", "Invalid item name.");
             itemTableView.refresh();
         });
-        buyingPriceColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+
+        buyingPriceColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter(
+                item.getBuyingPrice())));
         buyingPriceColumn.setOnEditCommit(e -> {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setBuyingPrice(e.getNewValue());
             write();
         });
-        sellingPriceColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+
+        sellingPriceColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter(
+                item.getSellingPrice()
+        )));
         sellingPriceColumn.setOnEditCommit(e -> {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setSellingPrice(e.getNewValue());
             write();
         });
-        inStockColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+
+        inStockColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter(
+                item.getInStock()
+        )));
         inStockColumn.setOnEditCommit(e -> {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setInStock(e.getNewValue());
             write();
             itemTableView.refresh();
         });
+
         itemTableView.setEditable(true);
     }
 
-    private boolean validNewName(String newName) {
-        if (Item.findItemByName(newName) != null) return false;
-        return newName.matches(".*[a-z].*");
+    private int validNewName(String newName, Item item) {
+        if (item.getName().toLowerCase(Locale.ROOT).equals(newName.toLowerCase(Locale.ROOT))) return 0;
+        if (Item.findItemByName(newName) != null) return 1;
+        if (newName.matches(".*[a-z].*"))
+            return 0;
+        return 2;
     }
 
     // TODO

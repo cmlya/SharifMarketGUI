@@ -46,7 +46,7 @@
          </font>
       </Label>
       <VBox fx:id="vBox" layoutX="17.0" layoutY="121.0" prefHeight="473.0" prefWidth="766.0">
-         <TableView fx:id="itemTableView" onMouseClicked="#setControls" onMouseDragged="#editable" prefHeight="435.0" prefWidth="766.0" visible="false">
+         <TableView fx:id="itemTableView" onMouseClicked="#editable" prefHeight="435.0" prefWidth="766.0" visible="false">
             <columns>
                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Item Name" />
                <TableColumn fx:id="codeColumn" prefWidth="75.0" text="Item Code" />
@@ -56,62 +56,55 @@
             </columns>
          </TableView>
          <VBox prefHeight="200.0" prefWidth="100.0">
-            <children>
-               <Label text="New Item:">
+            <Label text="New Item:">
+               <padding>
+                  <Insets left="10.0"/>
+               </padding>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="95.0">
+               <padding>
+                  <Insets left="10.0" right="10.0" top="10.0"/>
+               </padding>
+               <Label text="Item Name:"/>
+               <Label text="Selling Price:"/>
+               <Label text="Buying Price:"/>
+               <Label text="In Stock:"/>
+            </HBox>
+            <HBox fx:id="hBox" prefHeight="44.0" prefWidth="766.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0"/>
+               </padding>
+               <TextField fx:id="nameInput" onKeyTyped="#validateInput" promptText="item name"/>
+               <TextField fx:id="sellingPriceInput" onKeyTyped="#validateInput" promptText="selling price"/>
+               <TextField fx:id="buyingPriceInput" onKeyTyped="#validateInput" promptText="buying price"/>
+               <TextField fx:id="inStockInput" onKeyTyped="#validateInput" promptText="in stock"/>
+               <Button fx:id="add" disable="true" mnemonicParsing="false" onAction="#addItem" text="Add"/>
+               <Button fx:id="remove" disable="true" mnemonicParsing="false" onAction="#removeItem" text="Remove"/>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="5.0" right="5.0"/>
+               </padding>
+               <opaqueInsets>
+                  <Insets/>
+               </opaqueInsets>
+               <Label fx:id="invalidName" text="Item with this name exists." textFill="RED" visible="false">
+                  <HBox.margin>
+                     <Insets left="10.0"/>
+                  </HBox.margin>
+               </Label>
+               <Label fx:id="invalidPrice" text="Selling price cannot be less than buying price." textFill="RED"
+                      visible="false">
                   <padding>
-                     <Insets left="10.0" />
+                     <Insets left="10.0"/>
                   </padding>
                </Label>
-               <HBox prefHeight="100.0" prefWidth="200.0" spacing="95.0">
-                  <children>
-                     <Label text="Item Name:" />
-                     <Label text="Selling Price:" />
-                     <Label text="Buying Price:" />
-                     <Label text="In Stock:" />
-                  </children>
-                  <padding>
-                     <Insets left="10.0" right="10.0" top="10.0" />
-                  </padding>
-               </HBox>
-               <HBox fx:id="hBox" prefHeight="44.0" prefWidth="766.0" spacing="10.0">
-                  <padding>
-                     <Insets bottom="10.0" left="10.0" right="10.0" />
-                  </padding>
-                  <children>
-                     <TextField fx:id="nameInput" onKeyTyped="#validateInput" promptText="item name" />
-                     <TextField fx:id="sellingPriceInput" onKeyTyped="#validateInput" promptText="selling price" />
-                     <TextField fx:id="buyingPriceInput" onKeyTyped="#validateInput" promptText="buying price" />
-                     <TextField fx:id="inStockInput" onKeyTyped="#validateInput" promptText="in stock" />
-                     <Button fx:id="add" disable="true" mnemonicParsing="false" onAction="#addItem" text="Add" />
-                     <Button fx:id="remove" disable="true" mnemonicParsing="false" onAction="#removeItem" text="Remove" />
-                  </children>
-               </HBox>
-               <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-                  <children>
-                     <Label fx:id="invalidName" text="Item with this name exists." textFill="RED" visible="false">
-                        <HBox.margin>
-                           <Insets left="10.0" />
-                        </HBox.margin>
-                     </Label>
-                     <Label fx:id="invalidPrice" text="Selling price cannot be less than buying price." textFill="RED" visible="false">
-                        <padding>
-                           <Insets left="10.0" />
-                        </padding>
-                     </Label>
-                     <Label fx:id="invalidInputs" text="Invalid Inputs." textFill="RED" visible="false">
-                        <HBox.margin>
-                           <Insets left="220.0" />
-                        </HBox.margin>
-                     </Label>
-                  </children>
-                  <padding>
-                     <Insets bottom="5.0" right="5.0" />
-                  </padding>
-                  <opaqueInsets>
-                     <Insets />
-                  </opaqueInsets>
-               </HBox>
-            </children>
+               <Label fx:id="invalidInputs" text="Invalid Inputs." textFill="RED" visible="false">
+                  <HBox.margin>
+                     <Insets left="220.0"/>
+                  </HBox.margin>
+               </Label>
+            </HBox>
          </VBox>
       </VBox>
       <Label layoutX="20.0" layoutY="26.0" text="* Double Click on field to edit" />

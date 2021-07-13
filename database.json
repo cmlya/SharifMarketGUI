@@ -26,7 +26,7 @@
     {
       "name": "Raisins",
       "inStock": 9,
-      "buyingPrice": 4000,
+      "buyingPrice": 17000,
       "sellingPrice": 10000,
       "ID": 663842,
       "ordersIn": 1,
@@ -37,8 +37,8 @@
     {
       "name": "Biscuits",
       "inStock": 45,
-      "buyingPrice": 400,
-      "sellingPrice": 3000,
+      "buyingPrice": 0,
+      "sellingPrice": 50000,
       "ID": 670519,
       "ordersIn": 3,
       "numberSold": 5,
@@ -48,8 +48,8 @@
     {
       "name": "Grapes",
       "inStock": 8,
-      "buyingPrice": 30000,
-      "sellingPrice": 80000,
+      "buyingPrice": 33000,
+      "sellingPrice": 85000,
       "ID": 265227,
       "ordersIn": 1,
       "numberSold": 5,
@@ -59,8 +59,8 @@
     {
       "name": "Pizza",
       "inStock": 8,
-      "buyingPrice": 30000,
-      "sellingPrice": 75000,
+      "buyingPrice": 33000,
+      "sellingPrice": 50000,
       "ID": 81682,
       "ordersIn": 0,
       "numberSold": 0,
