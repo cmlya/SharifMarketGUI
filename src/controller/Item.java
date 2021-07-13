@@ -1,8 +1,6 @@
 package controller;
 
 import java.util.Locale;
-import static controller.Utils.digitCount;
-import static controller.Utils.spaces;
 
 public class Item {
     private String name;
@@ -45,103 +43,11 @@ public class Item {
         return null;
     }
 
-    public static void updateSales(Item item, int count, int sellingPrice, int buyingPrice) {
-        item.ordersIn++;
-        item.numberSold += count;
-        item.moneyMadeFrom += sellingPrice*count;
-        item.itemProfit += count*(sellingPrice - buyingPrice);
-    }
-
     public static void updateSales(Order order, Item item) {
         item.ordersIn++;
         item.numberSold += order.getNumber();
         item.moneyMadeFrom += order.getSpent();
         item.itemProfit += order.getProfit();
-    }
-
-    public static void printAll() {
-        int maxLengthName = ("ITEM".length());
-        int maxInStock = 99999999;
-        int maxSellingPrice = 99999;
-        for (Item item : Database.getInstance().getItems()) {
-            if (item.name.length() > maxLengthName)
-                maxLengthName = item.name.length();
-            if (item.inStock > maxInStock)
-                maxInStock = item.inStock;
-            if (item.sellingPrice > maxSellingPrice)
-                maxSellingPrice = item.sellingPrice;
-        }
-
-        System.out.println("ALL ITEMS");
-        String header = "ITEM" + spaces("ITEM", maxLengthName) +
-                "IN STOCK" + spaces("IN STOCK", digitCount(maxInStock)) +
-                "PRICE";
-        System.out.println(header);
-        for (int i = 0; i < header.length(); i++)
-            System.out.print("-");
-        System.out.println();
-        for (Item item : Database.getInstance().getItems()) {
-            System.out.println(item.name + spaces(item.name, maxLengthName) +
-                    item.inStock + spaces(String.valueOf(item.inStock), digitCount(maxInStock)) +
-                    item.sellingPrice + spaces(String.valueOf(item.sellingPrice), digitCount(maxSellingPrice)));
-        }
-    }
-
-    public static void printInStock() {
-        int maxLengthName = ("ITEM".length());
-        int maxInStock = 99999999;
-        int maxSellingPrice = 99999;
-        for (Item item : Database.getInstance().getItems()) {
-            if (item.inStock != 0) {
-                if (item.name.length() > maxLengthName)
-                    maxLengthName = item.name.length();
-                if (item.inStock > maxInStock)
-                    maxInStock = item.inStock;
-                if (item.sellingPrice > maxSellingPrice)
-                    maxSellingPrice = item.sellingPrice;
-            }
-        }
-
-        System.out.println("ITEMS IN STOCK");
-        String header = "ITEM" + spaces("ITEM", maxLengthName) +
-                "IN STOCK" + spaces("IN STOCK", digitCount(maxInStock)) +
-                "PRICE";
-        System.out.println(header);
-        for (int i = 0; i < header.length(); i++)
-            System.out.print("-");
-        System.out.println();
-        for (Item item : Database.getInstance().getItems()) {
-            if (item.inStock != 0) {
-                System.out.println(item.name + spaces(item.name, maxLengthName) +
-                        item.inStock + spaces(String.valueOf(item.inStock), digitCount(maxInStock)) +
-                        item.sellingPrice + spaces(String.valueOf(item.sellingPrice), digitCount(maxSellingPrice)));
-            }
-        }
-    }
-
-    public static void printOutOfStock() {
-        int maxLengthName = ("ITEM".length());
-        int maxSellingPrice = 99999;
-        for (Item item : Database.getInstance().getItems()) {
-            if (item.inStock == 0) {
-                if (item.name.length() > maxLengthName)
-                    maxLengthName = item.name.length();
-                if (item.sellingPrice > maxSellingPrice)
-                    maxSellingPrice = item.sellingPrice;
-            }
-        }
-
-        System.out.println("UNAVAILABLE ITEMS");
-        String header = "ITEM" + spaces("ITEM", maxLengthName) + "PRICE";
-        System.out.println(header);
-        for (int i = 0; i < header.length(); i++)
-            System.out.print("-");
-        System.out.println();
-        for (Item item : Database.getInstance().getItems()) {
-            if (item.inStock == 0) {
-                System.out.println(item.name + spaces(item.name, maxLengthName) + item.sellingPrice);
-            }
-        }
     }
 
     public String getName() { return name; }

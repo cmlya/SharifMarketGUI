@@ -3,65 +3,82 @@
     {
       "username": "user",
       "password": "pass",
-      "wallet": 60500
-    },
-    {
-      "username": "new",
-      "password": "pass",
-      "wallet": 451000
+      "wallet": 941000
     }
   ],
   "items": [
     {
-      "name": "Raspberry",
-      "inStock": 3,
-      "buyingPrice": 8000,
-      "sellingPrice": 1000,
-      "ID": 276453,
+      "name": "Blueberry",
+      "inStock": 12,
+      "buyingPrice": 1500,
+      "sellingPrice": 7000,
+      "ID": 729005,
+      "ordersIn": 1,
+      "numberSold": 3,
+      "moneyMadeFrom": 21000,
+      "itemProfit": 16500
+    },
+    {
+      "name": "Water",
+      "inStock": 14,
+      "buyingPrice": 400,
+      "sellingPrice": 1500,
+      "ID": 424108,
       "ordersIn": 0,
       "numberSold": 0,
       "moneyMadeFrom": 0,
       "itemProfit": 0
     },
     {
-      "name": "Raisins",
-      "inStock": 9,
-      "buyingPrice": 1000,
-      "sellingPrice": 5000,
-      "ID": 663842,
+      "name": "Strawberry",
+      "inStock": 38,
+      "buyingPrice": 5300,
+      "sellingPrice": 8000,
+      "ID": 913527,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Coffee",
+      "inStock": 24,
+      "buyingPrice": 3500,
+      "sellingPrice": 12000,
+      "ID": 486948,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Donut",
+      "inStock": 0,
+      "buyingPrice": 3000,
+      "sellingPrice": 6000,
+      "ID": 173056,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
+    },
+    {
+      "name": "Coca Cola",
+      "inStock": 4,
+      "buyingPrice": 200,
+      "sellingPrice": 1200,
+      "ID": 144462,
       "ordersIn": 1,
-      "numberSold": 5,
-      "moneyMadeFrom": 50000,
-      "itemProfit": 30000
+      "numberSold": 4,
+      "moneyMadeFrom": 4800,
+      "itemProfit": 4000
     },
     {
-      "name": "Biscuits",
-      "inStock": 45,
-      "buyingPrice": 0,
-      "sellingPrice": 5000,
-      "ID": 670519,
-      "ordersIn": 3,
-      "numberSold": 5,
-      "moneyMadeFrom": 15000,
-      "itemProfit": 13000
-    },
-    {
-      "name": "Grapes",
-      "inStock": 8,
-      "buyingPrice": 10000,
-      "sellingPrice": 40000,
-      "ID": 265227,
-      "ordersIn": 1,
-      "numberSold": 5,
-      "moneyMadeFrom": 400000,
-      "itemProfit": 250000
-    },
-    {
-      "name": "Pizza",
-      "inStock": 10,
-      "buyingPrice": 33000,
-      "sellingPrice": 50000,
-      "ID": 81682,
+      "name": "Fanta",
+      "inStock": 35,
+      "buyingPrice": 300,
+      "sellingPrice": 1200,
+      "ID": 74743,
       "ordersIn": 0,
       "numberSold": 0,
       "moneyMadeFrom": 0,
@@ -70,296 +87,70 @@
   ],
   "deletedItems": [
     {
-      "name": "Coffee",
+      "name": "Tea",
       "inStock": 0,
-      "buyingPrice": 1000,
-      "sellingPrice": 10000,
-      "ID": 796600,
-      "ordersIn": 4,
-      "numberSold": 10,
-      "moneyMadeFrom": 100000,
-      "itemProfit": 90000
-    },
-    {
-      "name": "Beans",
-      "inStock": 0,
-      "buyingPrice": 3000,
-      "sellingPrice": 5000,
-      "ID": 385575,
-      "ordersIn": 5,
-      "numberSold": 20,
-      "moneyMadeFrom": 100000,
-      "itemProfit": 40000
-    },
-    {
-      "name": "Sprite",
-      "inStock": 0,
-      "buyingPrice": 1000,
-      "sellingPrice": 5000,
-      "ID": 610787,
-      "ordersIn": 5,
-      "numberSold": 11,
-      "moneyMadeFrom": 55000,
-      "itemProfit": 44000
-    },
-    {
-      "name": "Potato",
-      "inStock": 7,
       "buyingPrice": 100,
-      "sellingPrice": 1000,
-      "ID": 174350,
-      "ordersIn": 5,
-      "numberSold": 21,
-      "moneyMadeFrom": 21000,
-      "itemProfit": 18000
+      "sellingPrice": 1200,
+      "ID": 764162,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
     },
     {
-      "name": "Banana",
-      "inStock": 8,
-      "buyingPrice": 5000,
-      "sellingPrice": 12000,
-      "ID": 647935,
-      "ordersIn": 3,
-      "numberSold": 4,
-      "moneyMadeFrom": 48000,
-      "itemProfit": 28000
-    },
-    {
-      "name": "Strawberry",
-      "inStock": 36,
-      "buyingPrice": 100,
+      "name": "Cookie",
+      "inStock": 21,
+      "buyingPrice": 1000,
       "sellingPrice": 3000,
-      "ID": 54388,
-      "ordersIn": 3,
-      "numberSold": 9,
-      "moneyMadeFrom": 27000,
-      "itemProfit": 26100
-    },
-    {
-      "name": "Water",
-      "inStock": 11,
-      "buyingPrice": 200,
-      "sellingPrice": 1000,
-      "ID": 685618,
-      "ordersIn": 4,
-      "numberSold": 5,
-      "moneyMadeFrom": 5000,
-      "itemProfit": 4000
-    },
-    {
-      "name": "Saghe Talaei",
-      "inStock": 90,
-      "buyingPrice": 100,
-      "sellingPrice": 1000,
-      "ID": 898425,
-      "ordersIn": 2,
-      "numberSold": 2,
-      "moneyMadeFrom": 2000,
-      "itemProfit": 1800
+      "ID": 968553,
+      "ordersIn": 0,
+      "numberSold": 0,
+      "moneyMadeFrom": 0,
+      "itemProfit": 0
     }
   ],
   "orders": [
     {
       "username": "user",
-      "date": "2021/07/11 23:11:41",
-      "itemID": 898425,
-      "number": 1,
-      "orderID": 438948,
-      "itemName": "Saghe Talaei",
-      "spent": 1000,
-      "profit": 900
+      "date": "2021/07/13 09:59:25",
+      "itemID": 913527,
+      "number": 4,
+      "orderID": 855439,
+      "itemName": "Strawberry",
+      "spent": 32000,
+      "profit": 10800
     },
     {
       "username": "user",
-      "date": "2021/07/11 23:11:45",
-      "itemID": 898425,
+      "date": "2021/07/13 09:59:33",
+      "itemID": 74743,
       "number": 1,
-      "orderID": 336609,
-      "itemName": "Saghe Talaei",
-      "spent": 1000,
-      "profit": 900
-    },
-    {
-      "username": "user",
-      "date": "2021/07/11 23:11:52",
-      "itemID": 898425,
-      "number": 1,
-      "orderID": 731107,
-      "itemName": "Saghe Talaei",
-      "spent": 1000,
-      "profit": 900
-    },
-    {
-      "username": "user",
-      "date": "2021/07/11 23:11:54",
-      "itemID": 898425,
-      "number": 1,
-      "orderID": 491967,
-      "itemName": "Saghe Talaei",
-      "spent": 1000,
-      "profit": 900
-    },
-    {
-      "username": "user",
-      "date": "2021/07/11 23:11:57",
-      "itemID": 898425,
-      "number": 1,
-      "orderID": 679068,
-      "itemName": "Saghe Talaei",
-      "spent": 1000,
-      "profit": 900
-    },
-    {
-      "username": "user",
-      "date": "2021/07/11 23:12:14",
-      "itemID": 898425,
-      "number": 1,
-      "orderID": 672719,
-      "itemName": "Saghe Talaei",
-      "spent": 1000,
-      "profit": 900
-    },
-    {
-      "username": "user",
-      "date": "2021/07/11 23:13:27",
-      "itemID": 898425,
-      "number": 1,
-      "orderID": 333900,
-      "itemName": "Saghe Talaei",
-      "spent": 1000,
-      "profit": 900
-    },
-    {
-      "username": "user",
-      "date": "2021/07/11 23:13:28",
-      "itemID": 898425,
-      "number": 1,
-      "orderID": 581217,
-      "itemName": "Saghe Talaei",
-      "spent": 1000,
+      "orderID": 294345,
+      "itemName": "Fanta",
+      "spent": 1200,
       "profit": 900
     }
   ],
   "orderHistory": [
     {
       "username": "user",
-      "date": "2021/07/09 19:17:51",
-      "itemID": 385575,
-      "number": 1,
-      "orderID": 456191,
-      "itemName": "Beans",
-      "spent": 5000,
-      "profit": 2000
-    },
-    {
-      "username": "user",
-      "date": "2021/07/09 19:22:35",
-      "itemID": 685618,
-      "number": 1,
-      "orderID": 328542,
-      "itemName": "Water",
-      "spent": 1000,
-      "profit": 800
-    },
-    {
-      "username": "user",
-      "date": "2021/07/09 19:38:20",
-      "itemID": 685618,
-      "number": 2,
-      "orderID": 526153,
-      "itemName": "Water",
-      "spent": 2000,
-      "profit": 1600
-    },
-    {
-      "username": "new",
-      "date": "2021/07/09 19:46:19",
-      "itemID": 54388,
+      "date": "2021/07/13 09:59:18",
+      "itemID": 729005,
       "number": 3,
-      "orderID": 306911,
-      "itemName": "Strawberry",
-      "spent": 9000,
-      "profit": 8700
-    },
-    {
-      "username": "new",
-      "date": "2021/07/09 19:46:13",
-      "itemID": 685618,
-      "number": 1,
-      "orderID": 732967,
-      "itemName": "Water",
-      "spent": 1000,
-      "profit": 800
-    },
-    {
-      "username": "new",
-      "date": "2021/07/10 00:18:12",
-      "itemID": 670519,
-      "number": 3,
-      "orderID": 293912,
-      "itemName": "Biscuits",
-      "spent": 9000,
-      "profit": 7800
-    },
-    {
-      "username": "new",
-      "date": "2021/07/10 00:18:10",
-      "itemID": 265227,
-      "number": 5,
-      "orderID": 816863,
-      "itemName": "Grapes",
-      "spent": 400000,
-      "profit": 250000
-    },
-    {
-      "username": "new",
-      "date": "2021/07/10 00:18:07",
-      "itemID": 663842,
-      "number": 5,
-      "orderID": 547134,
-      "itemName": "Raisins",
-      "spent": 50000,
-      "profit": 30000
+      "orderID": 103938,
+      "itemName": "Blueberry",
+      "spent": 21000,
+      "profit": 16500
     },
     {
       "username": "user",
-      "date": "2021/07/10 03:41:21",
-      "itemID": 670519,
-      "number": 1,
-      "orderID": 372385,
-      "itemName": "Biscuits",
-      "spent": 3000,
-      "profit": 2600
-    },
-    {
-      "username": "user",
-      "date": "2021/07/11 23:13:44",
-      "itemID": 670519,
-      "number": 1,
-      "orderID": 993752,
-      "itemName": "Biscuits",
-      "spent": 3000,
-      "profit": 2600
-    },
-    {
-      "username": "user",
-      "date": "2021/07/11 23:13:23",
-      "itemID": 898425,
-      "number": 1,
-      "orderID": 529083,
-      "itemName": "Saghe Talaei",
-      "spent": 1000,
-      "profit": 900
-    },
-    {
-      "username": "user",
-      "date": "2021/07/11 23:13:25",
-      "itemID": 898425,
-      "number": 1,
-      "orderID": 525869,
-      "itemName": "Saghe Talaei",
-      "spent": 1000,
-      "profit": 900
+      "date": "2021/07/13 09:59:37",
+      "itemID": 144462,
+      "number": 4,
+      "orderID": 352159,
+      "itemName": "Coca Cola",
+      "spent": 4800,
+      "profit": 4000
     }
   ]
 }

@@ -40,6 +40,7 @@ public class ShowItems implements Initializable {
     @FXML Button cancelOrder = new Button();
     @FXML Label notEnoughMoney = new Label();
     @FXML Button exitButton = new Button();
+    @FXML Label wallet = new Label();
 
     @FXML private void showInStock() { showAvailable = true; showingOrders = false; showItems(); }
     @FXML private void showOutOfStock() { showAvailable = false; showingOrders = false; showItems(); }
@@ -156,6 +157,7 @@ public class ShowItems implements Initializable {
         showItems();
         itemTableView.refresh();
         resetControls();
+        updateWallet();
     }
 
     @FXML
@@ -169,12 +171,16 @@ public class ShowItems implements Initializable {
         orderTableView.refresh();
         itemTableView.refresh();
         showOrders();
+        updateWallet();
     }
+
+    private void updateWallet() { wallet.setText("Wallet: " + Database.getInstance().getCurrentCustomer().getWallet()); }
 
     @FXML private void mainMenu () throws IOException { setScene("MainMenu.fxml"); }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        updateWallet();
         exitButton.setOnAction(e -> UserUtils.exit());
     }
 }

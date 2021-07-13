@@ -6,17 +6,6 @@ import java.util.Random;
 
 public class Utils {
 
-    static int digitCount(int number) {
-        int digits = 0;
-        while (number != 0) {
-            number = number / 10;
-            ++digits;
-        }
-        return digits;
-    }
-
-    static String spaces(String word, int maxLength) { return " ".repeat(Math.max(0, maxLength - word.length() + 1)); }
-
     public static String date() {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         return dateTimeFormatter.format(LocalDateTime.now());

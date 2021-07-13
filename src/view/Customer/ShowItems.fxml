@@ -70,4 +70,9 @@
       </font>
    </Button>
    <Label fx:id="notEnoughMoney" layoutX="591.0" layoutY="531.0" text="Not enough money" textFill="RED" visible="false" />
+   <Label fx:id="wallet" layoutX="70.0" layoutY="52.0">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
 </AnchorPane>

@@ -80,9 +80,6 @@ public class Database {
         write();
     }
     public void addOrderHistory(Order order) { orderHistory.add(order); }
-    public void setName(Item item, String newName) { item.setName(newName); }
-    public void setSellingPrice(Item item, int newSellingPrice) { item.setSellingPrice(newSellingPrice); }
-    public void setBuyingPrice(Item item, int newBuyingPrice) { item.setBuyingPrice(newBuyingPrice); }
     public Customer getCurrentCustomer() { return currentCustomer; }
     public ArrayList<Item> getItems() { return items; }
     public ArrayList<Item> getDeletedItems() { return deletedItems; }
