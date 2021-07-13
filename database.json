@@ -14,9 +14,9 @@
   "items": [
     {
       "name": "Raspberry",
-      "inStock": 0,
+      "inStock": 3,
       "buyingPrice": 8000,
-      "sellingPrice": 20000,
+      "sellingPrice": 1000,
       "ID": 276453,
       "ordersIn": 0,
       "numberSold": 0,
@@ -26,8 +26,8 @@
     {
       "name": "Raisins",
       "inStock": 9,
-      "buyingPrice": 17000,
-      "sellingPrice": 10000,
+      "buyingPrice": 1000,
+      "sellingPrice": 5000,
       "ID": 663842,
       "ordersIn": 1,
       "numberSold": 5,
@@ -38,7 +38,7 @@
       "name": "Biscuits",
       "inStock": 45,
       "buyingPrice": 0,
-      "sellingPrice": 50000,
+      "sellingPrice": 5000,
       "ID": 670519,
       "ordersIn": 3,
       "numberSold": 5,
@@ -48,8 +48,8 @@
     {
       "name": "Grapes",
       "inStock": 8,
-      "buyingPrice": 33000,
-      "sellingPrice": 85000,
+      "buyingPrice": 10000,
+      "sellingPrice": 40000,
       "ID": 265227,
       "ordersIn": 1,
       "numberSold": 5,
@@ -58,7 +58,7 @@
     },
     {
       "name": "Pizza",
-      "inStock": 8,
+      "inStock": 10,
       "buyingPrice": 33000,
       "sellingPrice": 50000,
       "ID": 81682,

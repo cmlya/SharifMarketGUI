@@ -146,7 +146,6 @@ public class ItemManagement {
         return items;
     }
 
-    // TODO in stock, buying price and selling price validation (not negative, sp>bp), displaying alert messages
     @FXML
     private void editable() {
         setControls();
@@ -171,16 +170,26 @@ public class ItemManagement {
         buyingPriceColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter(
                 item.getBuyingPrice())));
         buyingPriceColumn.setOnEditCommit(e -> {
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setBuyingPrice(e.getNewValue());
-            write();
+            if (e.getNewValue() > item.getSellingPrice())
+                Alert.display("Error", "Buying price cannot be greater than selling price.");
+            else {
+                e.getTableView().getItems().get(e.getTablePosition().getRow()).setBuyingPrice(e.getNewValue());
+                write();
+            }
+            itemTableView.refresh();
         });
 
         sellingPriceColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter(
                 item.getSellingPrice()
         )));
         sellingPriceColumn.setOnEditCommit(e -> {
-            e.getTableView().getItems().get(e.getTablePosition().getRow()).setSellingPrice(e.getNewValue());
-            write();
+            if (e.getNewValue() < item.getBuyingPrice())
+                Alert.display("Error", "Selling price cannot be less than buying price.");
+            else {
+                e.getTableView().getItems().get(e.getTablePosition().getRow()).setSellingPrice(e.getNewValue());
+                write();
+            }
+            itemTableView.refresh();
         });
 
         inStockColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter(
@@ -189,6 +198,7 @@ public class ItemManagement {
         inStockColumn.setOnEditCommit(e -> {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setInStock(e.getNewValue());
             write();
+            itemTableView.setItems(getItems());
             itemTableView.refresh();
         });
 
@@ -201,15 +211,6 @@ public class ItemManagement {
         if (newName.matches(".*[a-z].*"))
             return 0;
         return 2;
-    }
-
-    // TODO
-    private boolean validInStock(String newInStock) {
-        try {
-            int tmp = Integer.parseInt(newInStock);
-            return true;
-        }
-        catch (NumberFormatException e) { return false; }
     }
 
     @FXML private void exitButton() { AdminUtils.exit(); }

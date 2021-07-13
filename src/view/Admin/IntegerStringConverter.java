@@ -9,9 +9,7 @@ public class IntegerStringConverter extends StringConverter<Integer> {
     public IntegerStringConverter(int n) { this.n = n; }
 
     public Integer fromString(String var1) {
-        if (var1 == null) {
-            return n;
-        }
+        if (var1 == null) return n;
         else {
             var1 = var1.trim();
             Pattern pattern = Pattern.compile("^\\d+$");
