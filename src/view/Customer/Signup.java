@@ -3,16 +3,20 @@ package view.Customer;
 import controller.Customer;
 import controller.Database;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import sample.Alert;
+import view.Alert;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Locale;
+import java.util.ResourceBundle;
+
 import static view.Customer.UserUtils.setScene;
 
-public class Signup {
+public class Signup implements Initializable {
     @FXML TextField newUsername;
     @FXML PasswordField newPassword = new PasswordField();
     @FXML PasswordField testString = new PasswordField();
@@ -21,6 +25,7 @@ public class Signup {
     @FXML Label invalidPassword = new Label();
     @FXML Label passwordsDoNotMatch = new Label();
     @FXML Button signUpButton = new Button();
+    @FXML Button exitButton = new Button();
 
     @FXML
     private void checkUsername() {
@@ -56,5 +61,9 @@ public class Signup {
     }
 
     @FXML private void back() throws IOException { setScene("LoginSignupMenu.fxml"); }
-    @FXML private void exitButton() { UserUtils.exit(); }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        exitButton.setOnAction(e -> System.exit(1400));
+    }
 }

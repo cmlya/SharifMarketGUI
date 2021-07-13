@@ -7,15 +7,18 @@ import controller.Order;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import static controller.Utils.date;
 import static controller.Utils.randomCode;
 import static view.Customer.UserUtils.setScene;
 
-public class ShowItems {
+public class ShowItems implements Initializable {
     @FXML Pane pane = new Pane();
     @FXML TableView<Item> itemTableView = new TableView<>();
     @FXML TableColumn<Item, String> nameColumn = new TableColumn<>("Item Name");
@@ -36,6 +39,7 @@ public class ShowItems {
     @FXML TableColumn<Order, String> dateColumn = new TableColumn<>();
     @FXML Button cancelOrder = new Button();
     @FXML Label notEnoughMoney = new Label();
+    @FXML Button exitButton = new Button();
 
     @FXML private void showInStock() { showAvailable = true; showingOrders = false; showItems(); }
     @FXML private void showOutOfStock() { showAvailable = false; showingOrders = false; showItems(); }
@@ -120,9 +124,7 @@ public class ShowItems {
             valueFactory.setValue(1);
             count.setValueFactory(valueFactory);
             walletCheck();
-            count.valueProperty().addListener((observableValue, integer, t1) -> {
-                walletCheck();
-            });
+            count.valueProperty().addListener((observableValue, integer, t1) -> walletCheck());
         }
     }
 
@@ -170,5 +172,9 @@ public class ShowItems {
     }
 
     @FXML private void mainMenu () throws IOException { setScene("MainMenu.fxml"); }
-    @FXML private void exitButton() { UserUtils.exit(); }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        exitButton.setOnAction(e -> UserUtils.exit());
+    }
 }

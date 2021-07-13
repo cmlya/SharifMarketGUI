@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -22,6 +23,7 @@ public class OrderHistory implements Initializable {
     @FXML TableColumn<Order, Integer> itemIDColumn = new TableColumn<>();
     @FXML TableColumn<Order, Integer> countColumn = new TableColumn<>();
     @FXML TableColumn<Order, String> dateColumn = new TableColumn<>();
+    @FXML Button exitButton = new Button();
 
     private ObservableList<Order> getOrderHistory() {
         ObservableList<Order> orderHistory = FXCollections.observableArrayList();
@@ -31,6 +33,7 @@ public class OrderHistory implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        exitButton.setOnAction(e -> System.exit(1400));
         orderIDColumn.setMinWidth(100);
         customerColumn.setMinWidth(100);
         itemNameColumn.setMinWidth(100);
@@ -47,5 +50,4 @@ public class OrderHistory implements Initializable {
     }
 
     @FXML private void mainMenu() throws IOException { setScene("AdminMainMenu.fxml"); }
-    @FXML private void exitButton() { AdminUtils.exit(); }
 }

@@ -5,20 +5,23 @@ import controller.Item;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 import static controller.Database.write;
 import static controller.Utils.randomCode;
 import static view.Admin.AdminUtils.setScene;
-import sample.Alert;
+import view.Alert;
 
-public class ItemManagement {
+public class ItemManagement implements Initializable {
     @FXML RadioButton availableItems = new RadioButton();
     @FXML RadioButton unavailableItems = new RadioButton();
     @FXML VBox vBox = new VBox();
@@ -41,6 +44,7 @@ public class ItemManagement {
     @FXML Label invalidInputs = new Label();
     @FXML Label invalidPrice = new Label();
     Boolean validItem = true;
+    @FXML Button exitButton = new Button();
 
     @FXML
     private void setDisplay() {
@@ -213,7 +217,10 @@ public class ItemManagement {
         return 2;
     }
 
-    @FXML private void exitButton() { AdminUtils.exit(); }
     @FXML private void mainMenu () throws IOException { setScene("AdminMainMenu.fxml"); }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        exitButton.setOnAction(e -> System.exit(1400));
+    }
 }

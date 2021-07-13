@@ -5,7 +5,7 @@ import static controller.Database.write;
 public class Customer {
     private final String username;
     private String password;
-    private long wallet = 1000000; // initial money
+    private long wallet = 1000000;
 
     public Customer(String username, String password) {
         this.username = username;

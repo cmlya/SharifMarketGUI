@@ -1,6 +1,5 @@
 package view.Admin;
 
-import controller.Database;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,10 +13,5 @@ public class AdminUtils {
             Stage stage = AdminView.window;
             stage.setScene(new Scene(parent, AdminView.STAGE_WIDTH, AdminView.STAGE_HEIGHT));
             stage.show();
-    }
-
-    public static void exit() {
-        Database.getInstance().setCurrentCustomer(null);
-        System.exit(1400);
     }
 }

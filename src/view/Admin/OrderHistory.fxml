@@ -9,40 +9,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Admin.OrderHistory">
-   <children>
-      <Pane prefHeight="600.0" prefWidth="800.0">
-         <children>
-            <VBox layoutX="32.0" layoutY="75.0" prefHeight="465.0" prefWidth="737.0">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="736.0" text="Order History">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <TableView fx:id="orderTableView" prefHeight="384.0" prefWidth="737.0">
-                    <columns>
-                        <TableColumn fx:id="orderIDColumn" prefWidth="75.0" text="Order ID" />
-                        <TableColumn fx:id="customerColumn" prefWidth="94.5" text="Customer" />
-                        <TableColumn fx:id="itemNameColumn" prefWidth="75.0" text="Item Name" />
-                        <TableColumn fx:id="itemIDColumn" prefWidth="75.0" text="Item ID" />
-                        <TableColumn fx:id="countColumn" prefWidth="75.0" text="Count" />
-                        <TableColumn fx:id="dateColumn" prefWidth="102.5" text="Date Ordered" />
-                    </columns>
-                  </TableView>
-               </children>
-            </VBox>
-            <Button layoutX="733.0" layoutY="44.0" mnemonicParsing="false" onAction="#exitButton" text="EXIT">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Button layoutX="35.0" layoutY="525.0" mnemonicParsing="false" onAction="#mainMenu" text="BACK">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
-   </children>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.Admin.OrderHistory">
+    <Pane prefHeight="600.0" prefWidth="800.0">
+        <VBox layoutX="32.0" layoutY="75.0" prefHeight="465.0" prefWidth="737.0">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="736.0"
+                   text="Order History">
+                <font>
+                    <Font size="20.0"/>
+                </font>
+            </Label>
+            <TableView fx:id="orderTableView" prefHeight="384.0" prefWidth="737.0">
+                <columns>
+                    <TableColumn fx:id="orderIDColumn" prefWidth="75.0" text="Order ID"/>
+                    <TableColumn fx:id="customerColumn" prefWidth="94.5" text="Customer"/>
+                    <TableColumn fx:id="itemNameColumn" prefWidth="75.0" text="Item Name"/>
+                    <TableColumn fx:id="itemIDColumn" prefWidth="75.0" text="Item ID"/>
+                    <TableColumn fx:id="countColumn" prefWidth="75.0" text="Count"/>
+                    <TableColumn fx:id="dateColumn" prefWidth="102.5" text="Date Ordered"/>
+                </columns>
+            </TableView>
+        </VBox>
+        <Button fx:id="exitButton" layoutX="733.0" layoutY="44.0" mnemonicParsing="false" text="EXIT">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Button>
+        <Button layoutX="35.0" layoutY="525.0" mnemonicParsing="false" onAction="#mainMenu" text="BACK">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </Button>
+    </Pane>
 </AnchorPane>

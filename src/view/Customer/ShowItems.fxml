@@ -33,7 +33,7 @@
          </columns>
       </TableView>
    </Pane>
-   <Button layoutX="722.0" layoutY="45.0" mnemonicParsing="false" onAction="#exitButton" text="EXIT">
+   <Button fx:id="exitButton" layoutX="722.0" layoutY="45.0" mnemonicParsing="false" text="EXIT">
       <font>
          <Font size="15.0" />
       </font>

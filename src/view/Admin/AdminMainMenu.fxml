@@ -14,34 +14,32 @@
             <Font size="38.0" />
          </font>
       </Label>
-      <Button layoutX="706.0" layoutY="47.0" mnemonicParsing="false" onAction="#exitButton" text="EXIT">
+      <Button fx:id="exitButton" layoutX="706.0" layoutY="47.0" mnemonicParsing="false" text="EXIT">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
       <VBox alignment="CENTER" layoutX="305.0" layoutY="201.0" spacing="20.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#itemManagement" text="Item Management">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#newOrders" text="New Orders">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#orderHistory" text="Order History">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#saleStatistics" text="Sale Statistics">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-         </children>
+         <Button mnemonicParsing="false" onAction="#itemManagement" text="Item Management">
+            <font>
+               <Font size="20.0"/>
+            </font>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#newOrders" text="New Orders">
+            <font>
+               <Font size="20.0"/>
+            </font>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#orderHistory" text="Order History">
+            <font>
+               <Font size="20.0"/>
+            </font>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#saleStatistics" text="Sale Statistics">
+            <font>
+               <Font size="20.0"/>
+            </font>
+         </Button>
       </VBox>
    </Pane>
 </AnchorPane>

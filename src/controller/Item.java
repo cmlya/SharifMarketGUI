@@ -1,6 +1,5 @@
 package controller;
 
-import model.ConsoleColors;
 import java.util.Locale;
 import static controller.Utils.digitCount;
 import static controller.Utils.spaces;
@@ -73,13 +72,13 @@ public class Item {
                 maxSellingPrice = item.sellingPrice;
         }
 
-        System.out.println(ConsoleColors.CYAN_BOLD + "ALL ITEMS" + ConsoleColors.RESET);
+        System.out.println("ALL ITEMS");
         String header = "ITEM" + spaces("ITEM", maxLengthName) +
                 "IN STOCK" + spaces("IN STOCK", digitCount(maxInStock)) +
                 "PRICE";
         System.out.println(header);
         for (int i = 0; i < header.length(); i++)
-            System.out.print(ConsoleColors.PURPLE_BRIGHT + "-" + ConsoleColors.RESET);
+            System.out.print("-");
         System.out.println();
         for (Item item : Database.getInstance().getItems()) {
             System.out.println(item.name + spaces(item.name, maxLengthName) +
@@ -103,13 +102,13 @@ public class Item {
             }
         }
 
-        System.out.println(ConsoleColors.GREEN_BOLD + "ITEMS IN STOCK" + ConsoleColors.RESET);
+        System.out.println("ITEMS IN STOCK");
         String header = "ITEM" + spaces("ITEM", maxLengthName) +
                 "IN STOCK" + spaces("IN STOCK", digitCount(maxInStock)) +
                 "PRICE";
         System.out.println(header);
         for (int i = 0; i < header.length(); i++)
-            System.out.print(ConsoleColors.PURPLE_BRIGHT + "-" + ConsoleColors.RESET);
+            System.out.print("-");
         System.out.println();
         for (Item item : Database.getInstance().getItems()) {
             if (item.inStock != 0) {
@@ -132,11 +131,11 @@ public class Item {
             }
         }
 
-        System.out.println(ConsoleColors.RED_BOLD + "UNAVAILABLE ITEMS" + ConsoleColors.RESET);
+        System.out.println("UNAVAILABLE ITEMS");
         String header = "ITEM" + spaces("ITEM", maxLengthName) + "PRICE";
         System.out.println(header);
         for (int i = 0; i < header.length(); i++)
-            System.out.print(ConsoleColors.PURPLE_BRIGHT + "-" + ConsoleColors.RESET);
+            System.out.print("-");
         System.out.println();
         for (Item item : Database.getInstance().getItems()) {
             if (item.inStock == 0) {

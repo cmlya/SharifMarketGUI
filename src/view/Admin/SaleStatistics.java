@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -25,6 +26,7 @@ public class SaleStatistics implements Initializable {
     @FXML TableColumn<Item, Integer> profitColumn = new TableColumn<>();
     @FXML Label totalSalesLabel = new Label();
     @FXML Label totalProfitLabel = new Label();
+    @FXML Button exitButton = new Button();
 
     private ObservableList<Item> getItems() {
         ObservableList<Item> items = FXCollections.observableArrayList();
@@ -34,10 +36,10 @@ public class SaleStatistics implements Initializable {
     }
 
     @FXML private void mainMenu() throws IOException { setScene("AdminMainMenu.fxml"); }
-    @FXML private void exitButton() { AdminUtils.exit(); }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        exitButton.setOnAction(e -> System.exit(1400));
         int totalProfit = 0;
         int totalSales = 0;
         for (Item item : Database.getInstance().getItems()) {

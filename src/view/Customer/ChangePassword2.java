@@ -3,19 +3,23 @@ package view.Customer;
 import controller.Database;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import static view.Customer.UserUtils.setScene;
 
-public class ChangePassword2 {
+public class ChangePassword2 implements Initializable {
     @FXML PasswordField testString = new PasswordField();
     @FXML PasswordField newPassword = new PasswordField();
     @FXML Label invalidPassword = new Label();
     @FXML Button submitButton = new Button();
     @FXML Label passwordsDoNotMatch = new Label();
     @FXML Label success = new Label();
+    @FXML Button exitButton = new Button();
 
     @FXML
     private void checkPassword() {
@@ -47,5 +51,9 @@ public class ChangePassword2 {
         new Thread(sleeper).start();
     }
     @FXML private void mainMenu () throws IOException { setScene("MainMenu.fxml"); }
-    @FXML private void exitButton() { UserUtils.exit(); }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        exitButton.setOnAction(actionEvent -> UserUtils.exit());
+    }
 }

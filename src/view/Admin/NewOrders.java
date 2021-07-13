@@ -26,6 +26,7 @@ public class NewOrders implements Initializable {
     @FXML TableColumn<Order, Integer> countColumn = new TableColumn<>();
     @FXML TableColumn<Order, String> dateColumn = new TableColumn<>();
     @FXML Button checkout = new Button();
+    @FXML Button exitButton = new Button();
 
     @FXML
     private void checkout() {
@@ -77,6 +78,7 @@ public class NewOrders implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        exitButton.setOnAction(e -> System.exit(1400));
         orderIDColumn.setMinWidth(100);
         customerColumn.setMinWidth(100);
         itemNameColumn.setMinWidth(100);
@@ -93,5 +95,4 @@ public class NewOrders implements Initializable {
     }
 
     @FXML private void mainMenu() throws IOException { setScene("AdminMainMenu.fxml"); }
-    @FXML private void exitButton() { AdminUtils.exit(); }
 }

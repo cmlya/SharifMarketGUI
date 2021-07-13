@@ -4,23 +4,20 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0"
-      prefWidth="785.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="view.Customer.LoginSignupMenu">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Customer.LoginSignupMenu">
    <Button layoutX="138.0" layoutY="242.0" mnemonicParsing="false" onAction="#signup" text="SIGN UP">
       <font>
-         <Font size="50.0"/>
+         <Font size="50.0" />
       </font>
    </Button>
    <Button layoutX="436.0" layoutY="242.0" mnemonicParsing="false" onAction="#login" text="SIGN IN">
       <font>
-         <Font size="50.0"/>
+         <Font size="50.0" />
       </font>
    </Button>
-   <Button layoutX="698.0" layoutY="37.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="41.0" prefWidth="62.0"
-           text="EXIT">
+   <Button fx:id="exitButton" layoutX="698.0" layoutY="37.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="62.0" text="EXIT">
       <font>
-         <Font size="19.0"/>
+         <Font size="19.0" />
       </font>
    </Button>
 </Pane>
